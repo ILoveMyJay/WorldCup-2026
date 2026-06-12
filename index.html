@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIFA World Cup 2026 · 世界杯综合信息门户</title>
+  <meta name="description" content="实时获取 2026 FIFA 世界杯的最新比分、完整赛程、小组积分榜、热点新闻及球员数据。支持中英双语切换。">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIFA World Cup 2026 · 综合信息门户">
+  <meta property="og:description" content="实时获取 2026 FIFA 世界杯最新比分、赛程、积分榜与新闻。">
+
+  <!-- Google Fonts — Outfit (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- App Shell -->
+  <div id="app-container">
+    <!-- Header Navigation -->
+    <header id="main-header"></header>
+
+    <!-- Main Content Area -->
+    <main id="app-root">
+      <div class="initial-loader">
+        <div class="spinner"></div>
+        <p>正在加载世界杯数据 / Loading World Cup Data...</p>
+      </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer id="main-footer"></footer>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="modal-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

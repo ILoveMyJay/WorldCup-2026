@@ -1,0 +1,8 @@
+# Antigravity Agents
+.agents/
+
+# System / OS
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
