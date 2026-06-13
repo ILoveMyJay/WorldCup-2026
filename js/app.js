@@ -6,11 +6,10 @@ const App = {
   newsTimerInterval: null,
 
   async init() {
-    // Pre-populate default API keys
-    if (!localStorage.getItem('wc_key_football') && !localStorage.getItem('wc_key_gnews')) {
-      localStorage.setItem('wc_key_football', ApiService.DEFAULT_KEYS.football);
-      localStorage.setItem('wc_key_gnews', ApiService.DEFAULT_KEYS.gnews);
-    }
+    // Clean up legacy API key data from localStorage (keys are now server-side)
+    localStorage.removeItem('wc_key_football');
+    localStorage.removeItem('wc_key_gnews');
+
     window.addEventListener('hashchange', () => this.handleRouting());
     
     // Auto re-render on system dark mode change
@@ -41,10 +40,55 @@ const App = {
 
   async newsRefresh() {
     Utils.cache.remove('wc_news_en');
+    Utils.cache.remove('wc_news_zh-CN');
     const isNewsView = this.activeRoute === '#/' || this.activeRoute === '' || this.activeRoute === '#/news';
     if (isNewsView) {
       await this.handleRouting(true);
     }
+  },
+
+  // Fetch global voting data (live from Cloudflare KV/Functions with 10s cache)
+  async getVotes() {
+    const cacheKey = 'wc_votes_data';
+    const cached = Utils.cache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const response = await fetch('/api/vote');
+      if (response.ok) {
+        const data = await response.json();
+        Utils.cache.set(cacheKey, data, 10);
+        return data;
+      }
+    } catch (e) {
+      console.warn('Failed to fetch votes from KV. Using fallback simulation.', e);
+    }
+
+    return {
+      champion: {
+        'Argentina': 420, 'Brazil': 380, 'France': 310, 'England': 290, 'Germany': 240, 'Spain': 260, 'Portugal': 210, 'United States': 180, 'Canada': 95, 'Mexico': 110
+      },
+      matches: {}
+    };
+  },
+
+  // Submit a vote to Cloudflare KV
+  async submitVote(type, id, option) {
+    try {
+      const response = await fetch('/api/vote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, id, option })
+      });
+      if (response.ok) {
+        const data = await response.json();
+        Utils.cache.remove('wc_votes_data');
+        return data.votes;
+      }
+    } catch (e) {
+      console.error('Vote submission failed:', e);
+    }
+    return null;
   },
 
   async handleRouting(silent = false) {
@@ -66,6 +110,7 @@ const App = {
       else if (hash === '#/teams')                  await this.renderTeams(root);
       else if (hash.startsWith('#/team/'))          await this.renderTeamDetail(root, parseInt(hash.split('/').pop()));
       else if (hash === '#/players')                await this.renderPlayers(root);
+      else if (hash === '#/fanzone')                await this.renderFanZone(root);
       else if (hash.startsWith('#/match/'))         await this.renderMatchDetail(root, parseInt(hash.split('/').pop()));
       else                                          this.render404(root);
     } catch (e) {
@@ -88,11 +133,12 @@ const App = {
   // ========== 1. Dashboard — Two-Column Layout ==========
   async renderDashboard(container) {
     const isCn = I18n.getLanguage() === 'zh-CN';
-    const [matches, news, scorers, standings] = await Promise.all([
+    const [matches, news, scorers, standings, banners] = await Promise.all([
       ApiService.getMatches(),
       ApiService.getNews(I18n.getLanguage()),
       ApiService.getScorers(),
-      ApiService.getStandings()
+      ApiService.getStandings(),
+      ApiService.getBanners()
     ]);
 
     const upcoming = matches.filter(m => m.status === 'SCHEDULED' || m.status === 'TIMED')
@@ -107,6 +153,9 @@ const App = {
       .sort((a, b) => new Date(b.utcDate) - new Date(a.utcDate)).slice(0, 6);
 
     container.innerHTML = '';
+
+    // Banner carousel (Xiaohongshu style highlight slider)
+    container.appendChild(Components.BannerCarousel(banners, I18n.getLanguage()));
 
     // Tournament strip (replaces WC identity card)
     container.appendChild(Components.TournamentStrip(matches));
@@ -138,6 +187,14 @@ const App = {
       liveCard.appendChild(liveGrid);
     }
     left.appendChild(liveCard);
+
+    // Goals Chart Card (Draw grouped GF/GA chart to balance the column heights and add visual stats)
+    if (standings.length > 0) {
+      const goalsCard = Utils.el('div', { className: 'card card-pad' });
+      goalsCard.appendChild(Components.SectionBar('chart', isCn ? '球队攻防数据统计' : 'Team Attack & Defense Stats', '#/standings'));
+      goalsCard.appendChild(Utils.el('canvas', { id: 'goals-canvas-dash', className: 'chart-canvas', style: { height: '220px', width: '100%' } }));
+      left.appendChild(goalsCard);
+    }
 
     grid.appendChild(left);
 
@@ -186,6 +243,13 @@ const App = {
       standings.forEach(g => sGrid.appendChild(Components.GroupCard(g)));
       standingsSection.appendChild(sGrid);
       container.appendChild(standingsSection);
+    }
+
+    // Draw the goals chart after DOM is updated to avoid size calculations issues
+    if (standings.length > 0) {
+      setTimeout(() => {
+        Charts.drawTeamGoals('goals-canvas-dash', standings, isCn);
+      }, 100);
     }
   },
 
@@ -260,6 +324,26 @@ const App = {
     container.appendChild(grid);
   },
 
+  // ========== Fan Zone ==========
+  async renderFanZone(container) {
+    const isCn = I18n.getLanguage() === 'zh-CN';
+    const votes = await this.getVotes();
+    const userVotes = JSON.parse(localStorage.getItem('wc_user_votes') || '{"champion":null,"matches":{}}');
+
+    container.innerHTML = '';
+    const fanzoneElement = Components.FanZonePage(votes, userVotes, async (type, id) => {
+      if (type === 'champion') {
+        userVotes.champion = id;
+        localStorage.setItem('wc_user_votes', JSON.stringify(userVotes));
+        Utils.showToast(isCn ? '投票成功，感谢你的支持！' : 'Vote submitted, thank you!');
+        await this.submitVote(type, id);
+        this.renderFanZone(container);
+      }
+    });
+
+    container.appendChild(fanzoneElement);
+  },
+
   // ========== 4. News ==========
   async renderNews(container) {
     const isCn = I18n.getLanguage() === 'zh-CN';
@@ -332,6 +416,58 @@ const App = {
     header.appendChild(info);
     container.appendChild(header);
 
+    // Helper to fetch national team squads
+    const getSquad = (teamName) => {
+      const db = {
+        'Argentina': ['Lionel Messi', 'Julián Álvarez', 'Enzo Fernández', 'Alexis Mac Allister', 'Lautaro Martínez'],
+        'Brazil': ['Vinícius Júnior', 'Neymar Jr', 'Rodrygo', 'Bruno Guimarães', 'Marquinhos'],
+        'France': ['Kylian Mbappé', 'Antoine Griezmann', 'Ousmane Dembélé', 'Aurélien Tchouaméni', 'Theo Hernández'],
+        'England': ['Harry Kane', 'Jude Bellingham', 'Bukayo Saka', 'Phil Foden', 'Declan Rice'],
+        'Germany': ['Jamal Musiala', 'Florian Wirtz', 'Kai Havertz', 'Joshua Kimmich', 'Antonio Rüdiger'],
+        'Spain': ['Lamine Yamal', 'Álvaro Morata', 'Pedri', 'Rodri', 'Dani Carvajal'],
+        'Portugal': ['Cristiano Ronaldo', 'Bruno Fernandes', 'Bernardo Silva', 'Rafael Leão', 'Rúben Dias'],
+        'United States': ['Christian Pulisic', 'Weston McKennie', 'Timothy Weah', 'Tyler Adams', 'Matt Turner'],
+        'Canada': ['Alphonso Davies', 'Jonathan David', 'Cyle Larin', 'Stephen Eustáquio', 'Tajon Buchanan'],
+        'Mexico': ['Santiago Giménez', 'Hirving Lozano', 'Edson Álvarez', 'Guillermo Ochoa', 'Luis Chávez']
+      };
+      return db[teamName] || [];
+    };
+
+    // Star Lineup (Xiaohongshu style)
+    const squadList = getSquad(team.name);
+    if (squadList.length > 0) {
+      const lineupTitle = Utils.el('h2', { className: 'lineup-title' });
+      lineupTitle.innerHTML = isCn ? '球星阵容 · <span style="color:var(--accent)">国家队大名单</span>' : 'Star Lineup · <span style="color:var(--accent)">National Squad</span>';
+      container.appendChild(lineupTitle);
+
+      const lineupScroll = Utils.el('div', { className: 'lineup-scroll-container' });
+      squadList.forEach(playerName => {
+        const extra = Components.getPlayerExtraDetails(playerName);
+        const card = Utils.el('div', { 
+          className: 'lineup-card',
+          onClick: () => {
+            window.preselectedPlayerName = playerName;
+            location.hash = '#/players';
+          }
+        });
+
+        const avatar = Components.createPlayerAvatar(playerName, 'lineup-card-avatar');
+        card.appendChild(avatar);
+
+        const pName = Utils.el('span', { className: 'lineup-card-name' }, I18n.tPlayer(playerName));
+        card.appendChild(pName);
+
+        const posText = extra.pos === 'FW' ? (isCn ? '前锋' : 'FW') :
+                        extra.pos === 'MF' ? (isCn ? '中场' : 'MF') :
+                        extra.pos === 'DF' ? (isCn ? '后卫' : 'DF') : (isCn ? '门将' : 'GK');
+        const pPos = Utils.el('span', { className: 'lineup-card-pos' }, posText);
+        card.appendChild(pPos);
+
+        lineupScroll.appendChild(card);
+      });
+      container.appendChild(lineupScroll);
+    }
+
     // Matches
     const matchTitle = Utils.el('h2', { style: { fontFamily: "'Outfit', sans-serif", fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-1)', margin: '1.5rem 0 1rem', letterSpacing: '-0.02em' } });
     matchTitle.innerHTML = isCn ? '参赛 <span style="color:var(--accent)">比赛记录</span>' : 'Match <span style="color:var(--accent)">History</span>';
@@ -352,52 +488,216 @@ const App = {
     container.innerHTML = '';
 
     const title = Utils.el('h1', { className: 'page-title' });
-    title.innerHTML = isCn ? '数据统计 · <span class="accent">射手榜</span>' : 'Stats · <span class="accent">Top Scorers</span>';
+    title.innerHTML = isCn ? '数据统计 · <span class="accent">球员大厅</span>' : 'Stats · <span class="accent">Players Lobby</span>';
     container.appendChild(title);
 
-    // Chart
-    const chartCard = Utils.el('div', { className: 'card card-pad', style: { marginBottom: '1.5rem' } });
-    chartCard.appendChild(Components.SectionBar('chart', I18n.t('players.visualTitle')));
-    chartCard.appendChild(Utils.el('canvas', { id: 'scorers-canvas-full', className: 'chart-canvas', style: { height: '300px' } }));
-    container.appendChild(chartCard);
+    // Initial state
+    let activeTab = 'goals'; // 'goals', 'assists', 'pks'
+    let searchQuery = '';
+    let selectedPlayer = scorers[0] || null;
+    if (window.preselectedPlayerName) {
+      const found = scorers.find(s => s.player.name.toLowerCase() === window.preselectedPlayerName.toLowerCase());
+      if (found) {
+        selectedPlayer = found;
+      }
+      window.preselectedPlayerName = null;
+    }
 
-    // Table
-    const wrap = Utils.el('div', { className: 'data-table-wrap' });
-    const table = Utils.el('table', { className: 'data-table' });
-    table.appendChild(Utils.el('thead', {},
-      Utils.el('tr', {},
-        Utils.el('th', { style: { textAlign: 'center', width: '40px' } }, '#'),
-        Utils.el('th', {}, isCn ? '球员' : 'Player'),
-        Utils.el('th', {}, isCn ? '国家队' : 'Team'),
-        Utils.el('th', { style: { textAlign: 'right' } }, isCn ? '进球' : 'Goals'),
-        Utils.el('th', { style: { textAlign: 'right' } }, isCn ? '助攻' : 'Assists'),
-        Utils.el('th', { style: { textAlign: 'right' } }, isCn ? '点球' : 'Pens')
-      )
-    ));
-    const tbody = Utils.el('tbody');
-    scorers.forEach((s, i) => {
-      const row = Utils.el('tr');
-      row.appendChild(Utils.el('td', { style: { textAlign: 'center', fontWeight: '700', color: i < 3 ? 'var(--accent)' : 'var(--text-3)', fontVariantNumeric: 'tabular-nums' } }, i + 1));
-      row.appendChild(Utils.el('td', { style: { fontWeight: '600', color: 'var(--text-1)' } }, s.player.name));
-      const teamCell = Utils.el('td');
-      const teamInner = Utils.el('span', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem' } });
-      const teamFlag = Utils.el('img', { className: 'flag-sm', alt: s.team.name });
-      teamFlag.src = s.team.crest || '';
-      teamFlag.onerror = () => { teamFlag.style.opacity = '0.2'; };
-      teamInner.appendChild(teamFlag);
-      teamInner.appendChild(document.createTextNode(I18n.tTeam(s.team.name)));
-      teamCell.appendChild(teamInner);
-      row.appendChild(teamCell);
-      row.appendChild(Utils.el('td', { style: { textAlign: 'right', fontWeight: '700', color: 'var(--accent)', fontVariantNumeric: 'tabular-nums' } }, s.goals));
-      row.appendChild(Utils.el('td', { className: 'num-col', style: { textAlign: 'right' } }, s.assists || 0));
-      row.appendChild(Utils.el('td', { className: 'num-col', style: { textAlign: 'right' } }, s.penalties || 0));
-      tbody.appendChild(row);
+    // Split container
+    const lobby = Utils.el('div', { className: 'players-lobby' });
+    const leftCol = Utils.el('div', { className: 'players-list-column' });
+    const rightCol = Utils.el('div', { className: 'player-detail-column' });
+
+    // Search bar
+    const searchWrap = Utils.el('div', { className: 'player-search-wrap' });
+    const searchInput = Utils.el('input', {
+      type: 'text',
+      className: 'player-search-input',
+      placeholder: I18n.t('players.searchPlaceholder'),
+      value: searchQuery,
+      onInput: (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        updateList();
+      }
     });
-    table.appendChild(tbody);
-    wrap.appendChild(table);
-    container.appendChild(wrap);
+    searchWrap.appendChild(searchInput);
+    leftCol.appendChild(searchWrap);
 
-    setTimeout(() => Charts.drawScorers('scorers-canvas-full', scorers, isCn), 100);
+    // Filter tabs
+    const filterTabs = Utils.el('div', { className: 'player-filter-tabs' });
+    const tabs = [
+      { id: 'goals', label: I18n.t('players.tabScorers'), icon: '⚽' },
+      { id: 'assists', label: I18n.t('players.tabAssists'), icon: '👟' },
+      { id: 'pks', label: I18n.t('players.tabPKs'), icon: '🎯' }
+    ];
+
+    const tabButtons = {};
+    tabs.forEach(t => {
+      const btn = Utils.el('button', {
+        className: `player-filter-btn ${activeTab === t.id ? 'active' : ''}`,
+        onClick: () => {
+          Object.values(tabButtons).forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeTab = t.id;
+          updateList();
+        }
+      });
+      btn.innerHTML = `${t.icon} ${t.label}`;
+      tabButtons[t.id] = btn;
+      filterTabs.appendChild(btn);
+    });
+    leftCol.appendChild(filterTabs);
+
+    // List container
+    const listContainer = Utils.el('div', { className: 'players-scroll-list' });
+    leftCol.appendChild(listContainer);
+    lobby.appendChild(leftCol);
+    lobby.appendChild(rightCol);
+    container.appendChild(lobby);
+
+    // Function to update the list when search/tab changes
+    const updateList = () => {
+      listContainer.innerHTML = '';
+
+      // Filter and Sort
+      let filtered = scorers.filter(s => {
+        const nameMatch = s.player.name.toLowerCase().includes(searchQuery);
+        const teamMatch = s.team.name.toLowerCase().includes(searchQuery) || 
+                          I18n.tTeam(s.team.name).toLowerCase().includes(searchQuery);
+        return nameMatch || teamMatch;
+      });
+
+      // Sort based on active tab
+      if (activeTab === 'goals') {
+        filtered.sort((a, b) => (b.goals || 0) - (a.goals || 0));
+      } else if (activeTab === 'assists') {
+        filtered.sort((a, b) => (b.assists || 0) - (a.assists || 0));
+      } else if (activeTab === 'pks') {
+        filtered.sort((a, b) => (b.penalties || 0) - (a.penalties || 0));
+      }
+
+      // If selected player is no longer in filtered list, select first of filtered
+      if (filtered.length > 0) {
+        if (!filtered.find(p => p.player.id === selectedPlayer?.player?.id)) {
+          selectedPlayer = filtered[0];
+        }
+      } else {
+        selectedPlayer = null;
+      }
+
+      // Render rows
+      if (filtered.length === 0) {
+        listContainer.appendChild(Utils.el('p', { className: 'no-players-text' }, isCn ? '没有找到符合条件的球员' : 'No matching players found'));
+      } else {
+        filtered.forEach((s, idx) => {
+          const isSelected = selectedPlayer && selectedPlayer.player.id === s.player.id;
+          const row = Utils.el('div', { 
+            className: `player-lobby-row ${isSelected ? 'active' : ''}`,
+            onClick: () => {
+              // Highlight row
+              const rows = listContainer.querySelectorAll('.player-lobby-row');
+              rows.forEach(r => r.classList.remove('active'));
+              row.classList.add('active');
+              
+              selectedPlayer = s;
+              renderDetail();
+
+              // On mobile, show detail card in overlay
+              if (window.innerWidth <= 768) {
+                showMobileDrawer();
+              }
+            }
+          });
+
+          // Rank
+          row.appendChild(Utils.el('span', { className: `player-row-rank ${idx < 3 ? 'top3' : ''}` }, idx + 1));
+          
+          // Avatar
+          const avatar = Components.createPlayerAvatar(s.player.name, 'player-row-avatar');
+          row.appendChild(avatar);
+
+          // Name and Team
+          const meta = Utils.el('div', { className: 'player-row-meta' });
+          meta.appendChild(Utils.el('span', { className: 'player-row-name' }, I18n.tPlayer(s.player.name)));
+          
+          const teamBadge = Utils.el('span', { className: 'player-row-team' });
+          const teamFlag = Components.createFlag(s.team.crest, s.team.name, 'flag-sm');
+          teamFlag.style.width = '12px';
+          teamFlag.style.height = '12px';
+          teamFlag.style.borderRadius = '50%';
+          teamBadge.appendChild(teamFlag);
+          teamBadge.appendChild(Utils.el('span', {}, I18n.tTeam(s.team.name)));
+          meta.appendChild(teamBadge);
+          row.appendChild(meta);
+
+          // Stat Value
+          let val = 0;
+          let label = '';
+          if (activeTab === 'goals') {
+            val = s.goals || 0;
+            label = isCn ? '进球' : 'G';
+          } else if (activeTab === 'assists') {
+            val = s.assists || 0;
+            label = isCn ? '助攻' : 'A';
+          } else if (activeTab === 'pks') {
+            val = s.penalties || 0;
+            label = isCn ? '点球' : 'PK';
+          }
+
+          const valueBadge = Utils.el('div', { className: 'player-row-stat-badge' });
+          valueBadge.appendChild(Utils.el('span', { className: 'badge-num' }, val));
+          valueBadge.appendChild(Utils.el('span', { className: 'badge-lbl' }, label));
+          row.appendChild(valueBadge);
+
+          listContainer.appendChild(row);
+        });
+      }
+
+      renderDetail();
+    };
+
+    // Render detailed card
+    const renderDetail = () => {
+      rightCol.innerHTML = '';
+      if (!selectedPlayer) {
+        const hint = Utils.el('div', { className: 'player-detail-hint' });
+        hint.appendChild(Utils.el('span', { style: { fontSize: '2rem' } }, '👤'));
+        hint.appendChild(Utils.el('p', {}, I18n.t('players.selectHint')));
+        rightCol.appendChild(hint);
+        return;
+      }
+
+      const detailCard = Components.PlayerDetailCard(selectedPlayer, isCn);
+      rightCol.appendChild(detailCard);
+    };
+
+    // Show mobile drawer/overlay
+    const showMobileDrawer = () => {
+      let overlay = document.getElementById('player-mobile-overlay');
+      if (overlay) overlay.remove();
+
+      overlay = Utils.el('div', { id: 'player-mobile-overlay', className: 'player-mobile-overlay' });
+      const drawerContainer = Utils.el('div', { className: 'player-mobile-container' });
+      
+      const closeBtn = Utils.el('button', {
+        className: 'player-mobile-close',
+        onClick: () => {
+          overlay.classList.remove('active');
+          setTimeout(() => overlay.remove(), 300);
+        }
+      }, '✕');
+      
+      drawerContainer.appendChild(closeBtn);
+      drawerContainer.appendChild(Components.PlayerDetailCard(selectedPlayer, isCn));
+      overlay.appendChild(drawerContainer);
+      document.body.appendChild(overlay);
+
+      // Trigger transition
+      setTimeout(() => overlay.classList.add('active'), 10);
+    };
+
+    // Initial render
+    updateList();
   },
 
   // ========== 8. Match Detail ==========
@@ -483,6 +783,19 @@ const App = {
       tbl.appendChild(tb);
       wrap.appendChild(tbl);
       container.appendChild(wrap);
+    } else {
+      // Show match outcome prediction voting for scheduled/live matches
+      const votes = await this.getVotes();
+      const userVotes = JSON.parse(localStorage.getItem('wc_user_votes') || '{"champion":null,"matches":{}}');
+      
+      const voteWidget = Components.MatchVoteWidget(match, votes.matches[match.id], userVotes.matches[match.id], async (type, matchId, option) => {
+        userVotes.matches[matchId] = option;
+        localStorage.setItem('wc_user_votes', JSON.stringify(userVotes));
+        Utils.showToast(isCn ? '预测成功，感谢参与！' : 'Prediction recorded, thanks!');
+        await this.submitVote(type, matchId, option);
+        this.renderMatchDetail(container, matchId);
+      });
+      container.appendChild(voteWidget);
     }
   }
 };

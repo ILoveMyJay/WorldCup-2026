@@ -87,12 +87,14 @@ const Charts = {
       const teamName = `(${I18n.tTeam(item.team.name)})`;
       
       // Smart name formatter
-      let displayName = item.player.name;
-      if (displayName.includes('Vinicius')) {
-        displayName = 'Vinicius Jr.';
-      } else if (displayName.length > 14) {
-        const parts = displayName.split(' ');
-        displayName = parts.length > 1 ? parts[parts.length - 1] : displayName;
+      let displayName = I18n.tPlayer(item.player.name);
+      if (I18n.getLanguage() === 'en') {
+        if (displayName.includes('Vinicius')) {
+          displayName = 'Vinicius Jr.';
+        } else if (displayName.length > 14) {
+          const parts = displayName.split(' ');
+          displayName = parts.length > 1 ? parts[parts.length - 1] : displayName;
+        }
       }
 
       // Draw team name (right aligned to paddingLeft - 10)

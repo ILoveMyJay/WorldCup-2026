@@ -31,7 +31,7 @@ const Components = {
 
   // Helper to generate a flag image or a beautiful SVG placeholder for undetermined (TBD) teams
   createFlag(crestUrl, name, sizeClass = 'flag-sm') {
-    const isTbd = !name || name.includes('To Be Decided') || name.includes('Winner Group') || name.includes('Runner-up') || name.includes('TBD') || name.includes('W32') || name.includes('W16') || name.includes('W8') || name.includes('W4') || name.includes('RU ') || name.trim() === 'VS';
+    const isTbd = !name || typeof name !== 'string' || name.includes('To Be Decided') || name.includes('Winner Group') || name.includes('Runner-up') || name.includes('TBD') || name.includes('W32') || name.includes('W16') || name.includes('W8') || name.includes('W4') || name.includes('RU ') || name.trim() === 'VS';
     
     if (isTbd || !crestUrl) {
       const svgContainer = document.createElement('div');
@@ -49,46 +49,68 @@ const Components = {
     return img;
   },
 
-  // Helper to generate a premium player monogram avatar with dynamic color variations
+  // Helper to generate a player avatar from Wikipedia photo with dynamic monogram fallback
   createPlayerAvatar(playerName, sizeClass = 'scorer-avatar') {
     if (!playerName) return this.createFlag('', '', sizeClass);
-    
-    const parts = playerName.trim().split(/\s+/);
-    let initials = '';
-    if (parts.length > 1) {
-      initials = (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-    } else if (parts.length > 0) {
-      initials = parts[0].substring(0, 2).toUpperCase();
-    } else {
-      initials = '??';
-    }
 
-    let hash = 0;
-    for (let i = 0; i < playerName.length; i++) {
-      hash = playerName.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    const hue = Math.abs(hash % 360);
-    const bgStart = `hsl(${hue}, 80%, 92%)`;
-    const bgEnd = `hsl(${hue}, 80%, 80%)`;
-    const textColor = `hsl(${hue}, 85%, 22%)`;
-
-    return Utils.el('div', { 
-      className: sizeClass,
-      style: {
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: `linear-gradient(135deg, ${bgStart}, ${bgEnd})`,
-        color: textColor,
-        fontWeight: '700',
-        fontFamily: "'Outfit', sans-serif",
-        fontSize: '0.72rem',
-        borderRadius: '50%',
-        border: '1px solid var(--border)',
-        flexShrink: '0',
-        userSelect: 'none'
+    // Generate fallback monogram DOM
+    const generateFallback = () => {
+      const parts = playerName.trim().split(/\s+/);
+      let initials = '';
+      if (parts.length > 1) {
+        initials = (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+      } else if (parts.length > 0) {
+        initials = parts[0].substring(0, 2).toUpperCase();
+      } else {
+        initials = '??';
       }
-    }, initials);
+
+      let hash = 0;
+      for (let i = 0; i < playerName.length; i++) {
+        hash = playerName.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      const hue = Math.abs(hash % 360);
+      const bgStart = `hsl(${hue}, 80%, 92%)`;
+      const bgEnd = `hsl(${hue}, 80%, 80%)`;
+      const textColor = `hsl(${hue}, 85%, 22%)`;
+
+      return Utils.el('div', {
+        className: sizeClass,
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: `linear-gradient(135deg, ${bgStart}, ${bgEnd})`,
+          color: textColor,
+          fontWeight: '700',
+          fontFamily: "'Outfit', sans-serif",
+          fontSize: '0.72rem',
+          borderRadius: '50%',
+          textTransform: 'uppercase',
+          boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.05)',
+          userSelect: 'none'
+        }
+      }, initials);
+    };
+
+    // Return image that redirects to Wikipedia pageimage api
+    const img = Utils.el('img', {
+      className: sizeClass,
+      src: `/api/avatar?name=${encodeURIComponent(playerName)}&v=6`,
+      alt: playerName,
+      style: {
+        objectFit: 'cover',
+        borderRadius: '50%',
+        background: 'var(--surface-2)',
+        border: '1px solid var(--border)'
+      }
+    });
+
+    img.onerror = () => {
+      img.replaceWith(generateFallback());
+    };
+
+    return img;
   },
 
   // ========== Navigation Bar ==========
@@ -104,6 +126,7 @@ const Components = {
       { route: '#/standings', label: isCn ? '积分榜' : 'Standings', icon: 'table' },
       { route: '#/teams', label: isCn ? '球队' : 'Teams', icon: 'flag' },
       { route: '#/players', label: isCn ? '球员' : 'Players', icon: 'users' },
+      { route: '#/fanzone', label: isCn ? '球迷乐园' : 'Fan Zone', icon: 'soccer' },
     ];
 
     const header = document.getElementById('main-header');
@@ -442,7 +465,7 @@ const Components = {
     const avatar = this.createPlayerAvatar(scorer.player.name, 'scorer-avatar');
     row.appendChild(avatar);
 
-    row.appendChild(Utils.el('span', { className: 'scorer-name' }, scorer.player.name));
+    row.appendChild(Utils.el('span', { className: 'scorer-name' }, I18n.tPlayer(scorer.player.name)));
 
     const teamBadge = Utils.el('span', { className: 'scorer-team-badge' });
     const teamFlag = this.createFlag(scorer.team.crest, scorer.team.name, 'flag-sm');
@@ -518,7 +541,7 @@ const Components = {
     ));
   },
 
-  // ========== Settings Modal ==========
+  // ========== Settings Modal (Data Source Info) ==========
   OpenSettingsModal() {
     let overlay = document.getElementById('settings-overlay');
     if (!overlay) {
@@ -527,46 +550,686 @@ const Components = {
     }
     overlay.innerHTML = '';
     const isCn = I18n.getLanguage() === 'zh-CN';
-    const keys = ApiService.getKeys();
 
     const modal = Utils.el('div', { className: 'modal-box' });
 
     const modalHeader = Utils.el('div', { className: 'modal-header' });
-    modalHeader.appendChild(Utils.el('h2', { className: 'modal-title' }, I18n.t('settings.title')));
+    modalHeader.appendChild(Utils.el('h2', { className: 'modal-title' }, isCn ? '数据来源' : 'Data Sources'));
     modalHeader.appendChild(Utils.el('button', { className: 'modal-close', onClick: () => overlay.classList.remove('active') }, '×'));
     modal.appendChild(modalHeader);
 
-    modal.appendChild(Utils.el('p', { style: { fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '1.25rem', lineHeight: '1.6' } }, I18n.t('settings.desc')));
-
-    [
-      { id: 'setting-key-football', label: I18n.t('settings.key.football'), placeholder: 'Football-Data.org API Key' },
-      { id: 'setting-key-gnews', label: I18n.t('settings.key.gnews'), placeholder: 'GNews.io API Key' }
-    ].forEach(f => {
-      const group = Utils.el('div', { className: 'form-group' });
-      group.appendChild(Utils.el('label', { className: 'form-label' }, f.label));
-      group.appendChild(Utils.el('input', { id: f.id, type: 'password', className: 'form-input', value: (f.id === 'setting-key-football' ? keys.football : keys.gnews) || '', placeholder: f.placeholder }));
-      modal.appendChild(group);
-    });
+    modal.appendChild(Utils.el('p', { style: { fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '1.25rem', lineHeight: '1.6' } },
+      isCn
+        ? '本站数据来源于 Football-Data.org 和 GNews.io 的实时 API，并通过 Cloudflare 安全代理访问。'
+        : 'This portal fetches real-time data from Football-Data.org and GNews.io APIs, securely proxied through Cloudflare.'
+    ));
 
     const btnRow = Utils.el('div', { style: { display: 'flex', gap: '0.75rem', marginTop: '1.25rem' } });
     btnRow.appendChild(Utils.el('button', { className: 'btn-primary', style: { flex: '1' }, onClick: () => {
-      ApiService.saveKeys(document.getElementById('setting-key-football').value, document.getElementById('setting-key-gnews').value);
-      Utils.showToast(I18n.t('settings.success'));
-      overlay.classList.remove('active');
-      ['wc_matches','wc_standings','wc_scorers','wc_news_zh','wc_news_en','wc_teams_list'].forEach(k => Utils.cache.remove(k));
-      if (window.App) window.App.reRender();
-    }}, I18n.t('settings.save')));
-
-    btnRow.appendChild(Utils.el('button', { className: 'btn-secondary', onClick: () => {
-      ApiService.clearKeys();
-      Utils.showToast(I18n.t('settings.clearSuccess'));
-      overlay.classList.remove('active');
+      // Clear all caches and reload
       Utils.cache.clear();
+      overlay.classList.remove('active');
       if (window.App) window.App.reRender();
-    }}, I18n.t('settings.clear')));
+      Utils.showToast(isCn ? '缓存已清除，数据已刷新' : 'Cache cleared, data refreshed');
+    }}, isCn ? '清除缓存并刷新' : 'Clear Cache & Refresh'));
+
+    btnRow.appendChild(Utils.el('button', { className: 'btn-secondary', onClick: () => overlay.classList.remove('active') },
+      isCn ? '关闭' : 'Close'
+    ));
 
     modal.appendChild(btnRow);
     overlay.appendChild(modal);
     setTimeout(() => overlay.classList.add('active'), 50);
+  },
+
+  // ========== Fan Zone Page ==========
+  FanZonePage(votes, userVotes, onVote) {
+    const isCn = I18n.getLanguage() === 'zh-CN';
+    const container = Utils.el('div', { className: 'fanzone-container', style: { display: 'flex', flexDirection: 'column', gap: '1.5rem' } });
+
+    // Page Title
+    const title = Utils.el('h1', { className: 'page-title' });
+    title.innerHTML = isCn ? '球迷乐园 · <span class="accent">互动社区</span>' : 'Fan Zone · <span class="accent">Interactive Hub</span>';
+    container.appendChild(title);
+
+    // Two-column layout for Fan Zone
+    const grid = Utils.el('div', { className: 'grid-2' });
+
+    // Card 1: Champion prediction
+    const champCard = Utils.el('article', { className: 'card card-pad' });
+    champCard.appendChild(this.SectionBar('trophy', isCn ? '2026 世界杯冠军大预测' : '2026 World Cup Champion Prediction'));
+    champCard.appendChild(Utils.el('p', { style: { fontSize: '0.8rem', color: 'var(--text-2)', marginBottom: '1.25rem' } }, 
+      isCn ? '谁将捧起 2026 年美加墨世界杯神力神杯？投下你神圣的一票！' : 'Who will lift the trophy in North America? Cast your vote!'
+    ));
+
+    const champList = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '0.85rem' } });
+    
+    // Sort teams by vote counts
+    const teams = ['Argentina', 'Brazil', 'France', 'England', 'Germany', 'Spain', 'Portugal', 'United States', 'Canada', 'Mexico'];
+    const voteCounts = votes.champion || {};
+    const totalVotes = Object.values(voteCounts).reduce((a, b) => a + b, 0) || 1;
+
+    // Calculate percentage and sort
+    const sortedTeams = teams.map(t => ({
+      name: t,
+      count: voteCounts[t] || 0,
+      pct: ((voteCounts[t] || 0) / totalVotes * 100).toFixed(1)
+    })).sort((a, b) => b.count - a.count);
+
+    const hasVotedChamp = !!userVotes.champion;
+
+    sortedTeams.forEach(t => {
+      const row = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '0.25rem' } });
+      const info = Utils.el('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', fontWeight: '600' } });
+      
+      const teamLabel = Utils.el('span', { style: { display: 'inline-flex', alignItems: 'center', gap: '0.5rem' } });
+      const crestUrl = `https://crests.football-data.org/${this.getTeamCrestId(t.name)}.png`;
+      teamLabel.appendChild(this.createFlag(crestUrl, t.name, 'flag-sm'));
+      teamLabel.appendChild(document.createTextNode(I18n.tTeam(t.name)));
+      info.appendChild(teamLabel);
+
+      const stats = Utils.el('span', { style: { color: 'var(--text-2)' } }, `${t.count} ${isCn ? '票' : 'votes'} (${t.pct}%)`);
+      info.appendChild(stats);
+      row.appendChild(info);
+
+      // Bar container
+      const barBg = Utils.el('div', { style: { background: 'var(--surface-2)', height: '8px', borderRadius: '4px', position: 'relative', display: 'flex', overflow: 'hidden' } });
+      const barFill = Utils.el('div', { style: { 
+        background: t.name === userVotes.champion ? 'var(--accent)' : 'linear-gradient(90deg, var(--accent-light), var(--accent))', 
+        width: `${t.pct}%`, 
+        height: '100%', 
+        borderRadius: '4px',
+        transition: 'width 0.6s ease'
+      } });
+      barBg.appendChild(barFill);
+      row.appendChild(barBg);
+
+      // Vote button
+      if (!hasVotedChamp) {
+        const btn = Utils.el('button', {
+          className: 'btn-secondary',
+          style: { alignSelf: 'flex-end', padding: '0.25rem 0.6rem', fontSize: '0.75rem', borderRadius: '5px', marginTop: '0.25rem' },
+          onClick: () => onVote('champion', t.name)
+        }, isCn ? '支持' : 'Vote');
+        row.appendChild(btn);
+      } else if (t.name === userVotes.champion) {
+        const votedBadge = Utils.el('span', { style: { alignSelf: 'flex-end', fontSize: '0.7rem', color: 'var(--accent)', fontWeight: '700', marginTop: '0.25rem' } }, 
+          isCn ? '★ 已投此队' : '★ Voted'
+        );
+        row.appendChild(votedBadge);
+      }
+
+      champList.appendChild(row);
+    });
+
+    champCard.appendChild(champList);
+    grid.appendChild(champCard);
+
+    // Card 2: Support Leaderboard & Fun interactions
+    const funCard = Utils.el('article', { className: 'card card-pad' });
+    funCard.appendChild(this.SectionBar('radio', isCn ? '球迷助威大本营' : 'Fan Cheer Center'));
+    funCard.appendChild(Utils.el('p', { style: { fontSize: '0.8rem', color: 'var(--text-2)', marginBottom: '1.25rem' } },
+      isCn ? '在这里你可以看到全球球迷最关注的球队，发表留言或者为心爱战队打 Call。' : 'Cheer for your team and comment on matches with fans worldwide.'
+    ));
+
+    // Support leaderboard lists
+    const commentBox = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '0.75rem' } });
+    commentBox.appendChild(Utils.el('h3', { style: { fontSize: '0.9rem', fontWeight: '700' } }, isCn ? '球迷碎碎念 / Live Comments' : 'Live Comments'));
+    
+    const commentList = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '300px', overflowY: 'auto', background: 'var(--surface-2)', padding: '0.75rem', borderRadius: '8px' } });
+    
+    const mockComments = [
+      { user: 'Lionel_Fan', text: 'Vamos Argentina! Back to back champion?', time: '2 mins ago' },
+      { user: 'SamArmy', text: 'Pochettino is cooking something special for USA!', time: '10 mins ago' },
+      { user: 'ZizouLegacy', text: 'France is still the strongest squad in my opinion.', time: '23 mins ago' },
+      { user: 'NeymarGinga', text: 'Brazil will show the world Jogo Bonito again in Los Angeles.', time: '1 hr ago' }
+    ];
+
+    mockComments.forEach(c => {
+      const comm = Utils.el('div', { style: { fontSize: '0.78rem', borderBottom: '1px solid var(--border)', paddingBottom: '0.5rem' } });
+      const cHeader = Utils.el('div', { style: { display: 'flex', justifyContent: 'space-between', fontWeight: '700', color: 'var(--text-1)', marginBottom: '0.15rem' } });
+      cHeader.appendChild(Utils.el('span', {}, c.user));
+      cHeader.appendChild(Utils.el('span', { style: { fontWeight: '400', color: 'var(--text-3)', fontSize: '0.7rem' } }, c.time));
+      comm.appendChild(cHeader);
+      comm.appendChild(Utils.el('p', { style: { color: 'var(--text-2)', lineHeight: '1.4' } }, c.text));
+      commentList.appendChild(comm);
+    });
+    commentBox.appendChild(commentList);
+
+    // Comment input box
+    const inputArea = Utils.el('div', { style: { display: 'flex', gap: '0.5rem', marginTop: '0.5rem' } });
+    const input = Utils.el('input', {
+      type: 'text',
+      placeholder: isCn ? '说点什么吧...' : 'Add to the discussion...',
+      style: { flex: '1', padding: '0.5rem', background: 'var(--surface-1)', border: '1px solid var(--border)', borderRadius: '6px', fontSize: '0.8rem', color: 'var(--text-1)' }
+    });
+    const sendBtn = Utils.el('button', {
+      className: 'btn-primary',
+      style: { padding: '0.5rem 1rem', fontSize: '0.8rem', borderRadius: '6px' },
+      onClick: () => {
+        if (!input.value.trim()) return;
+        const newComm = Utils.el('div', { style: { fontSize: '0.78rem', borderBottom: '1px solid var(--border)', paddingBottom: '0.5rem' } });
+        const cHeader = Utils.el('div', { style: { display: 'flex', justifyContent: 'space-between', fontWeight: '700', color: 'var(--text-1)', marginBottom: '0.15rem' } });
+        cHeader.appendChild(Utils.el('span', {}, isCn ? '我 (球迷)' : 'Me (Fan)'));
+        cHeader.appendChild(Utils.el('span', { style: { fontWeight: '400', color: 'var(--text-3)', fontSize: '0.7rem' } }, isCn ? '刚刚' : 'just now'));
+        newComm.appendChild(cHeader);
+        newComm.appendChild(Utils.el('p', { style: { color: 'var(--text-2)', lineHeight: '1.4' } }, input.value));
+        commentList.insertBefore(newComm, commentList.firstChild);
+        input.value = '';
+        Utils.showToast(isCn ? '发布成功！' : 'Comment posted!');
+      }
+    }, isCn ? '发送' : 'Send');
+
+    inputArea.appendChild(input);
+    inputArea.appendChild(sendBtn);
+    commentBox.appendChild(inputArea);
+
+    funCard.appendChild(commentBox);
+    grid.appendChild(funCard);
+
+    container.appendChild(grid);
+    return container;
+  },
+
+  // Helper mapping team names to crest IDs for flag generation in champion poll
+  getTeamCrestId(teamName) {
+    const map = {
+      'Argentina': 762, 'Brazil': 764, 'France': 773, 'England': 770, 'Germany': 759,
+      'Spain': 760, 'Portugal': 765, 'United States': 784, 'Canada': 782, 'Mexico': 783
+    };
+    return map[teamName] || 762;
+  },
+
+  // ========== Match Prediction Voting Widget ==========
+  MatchVoteWidget(match, matchVotes, userVote, onVote) {
+    const isCn = I18n.getLanguage() === 'zh-CN';
+    const widget = Utils.el('div', { className: 'card card-pad', style: { marginTop: '1.5rem' } });
+    widget.appendChild(this.SectionBar('soccer', isCn ? '本场胜负大竞猜' : 'Match Outcome Prediction'));
+
+    const votes = matchVotes || { home: 12, draw: 8, away: 5 };
+    const total = votes.home + votes.draw + votes.away;
+    const homePct = ((votes.home / total) * 100).toFixed(0);
+    const drawPct = ((votes.draw / total) * 100).toFixed(0);
+    const awayPct = ((votes.away / total) * 100).toFixed(0);
+
+    const hasVoted = !!userVote;
+
+    const wrapper = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' } });
+
+    if (!hasVoted) {
+      // 3 clickable columns
+      const cols = Utils.el('div', { style: { display: 'flex', gap: '0.75rem', width: '100%' } });
+      const btns = [
+        { key: 'home', label: isCn ? `${I18n.tTeam(match.homeTeam.name)} 胜` : `${I18n.tTeam(match.homeTeam.name)} Win` },
+        { key: 'draw', label: isCn ? '双方战平' : 'Draw' },
+        { key: 'away', label: isCn ? `${I18n.tTeam(match.awayTeam.name)} 胜` : `${I18n.tTeam(match.awayTeam.name)} Win` }
+      ];
+
+      btns.forEach(b => {
+        const btn = Utils.el('button', {
+          className: 'btn-secondary',
+          style: { flex: '1', padding: '0.75rem', fontSize: '0.8rem', borderRadius: '8px', fontWeight: '600' },
+          onClick: () => onVote('match', match.id, b.key)
+        }, b.label);
+        cols.appendChild(btn);
+      });
+      wrapper.appendChild(cols);
+    } else {
+      // 3 progress bars showing percentages
+      const stats = [
+        { key: 'home', label: I18n.tTeam(match.homeTeam.name), count: votes.home, pct: homePct, color: 'var(--accent)' },
+        { key: 'draw', label: isCn ? '战平' : 'Draw', count: votes.draw, pct: drawPct, color: 'var(--text-3)' },
+        { key: 'away', label: I18n.tTeam(match.awayTeam.name), count: votes.away, pct: awayPct, color: 'var(--accent)' }
+      ];
+
+      stats.forEach(s => {
+        const row = Utils.el('div', { style: { display: 'flex', flexDirection: 'column', gap: '0.3rem' } });
+        const labelRow = Utils.el('div', { style: { display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', fontWeight: '700' } });
+        
+        const isUserChoice = s.key === userVote;
+        labelRow.appendChild(Utils.el('span', {}, s.label + (isUserChoice ? (isCn ? ' (我的选择)' : ' (Your Choice)') : '')));
+        labelRow.appendChild(Utils.el('span', {}, `${s.pct}% (${s.count} ${isCn ? '票' : 'votes'})`));
+        row.appendChild(labelRow);
+
+        const barBg = Utils.el('div', { style: { background: 'var(--surface-2)', height: '10px', borderRadius: '5px', overflow: 'hidden' } });
+        const barFill = Utils.el('div', { style: { 
+          background: isUserChoice ? 'var(--accent)' : 'linear-gradient(90deg, var(--accent-light), var(--accent))',
+          width: `${s.pct}%`, 
+          height: '100%', 
+          borderRadius: '5px',
+          transition: 'width 0.5s ease'
+        } });
+        barBg.appendChild(barFill);
+        row.appendChild(barBg);
+
+        wrapper.appendChild(row);
+      });
+    }
+
+    widget.appendChild(wrapper);
+    return widget;
+  },
+
+  // Helper for generating player details consistently
+  getPlayerExtraDetails(playerName) {
+    const db = {
+      "Kylian Mbappé": { jersey: 10, pos: "FW", club: "Real Madrid", age: 27, height: "178 cm", weight: "75 kg", skills: [97, 90, 80, 92, 36, 78] },
+      "Kylian Mbappe": { jersey: 10, pos: "FW", club: "Real Madrid", age: 27, height: "178 cm", weight: "75 kg", skills: [97, 90, 80, 92, 36, 78] },
+      "Lionel Messi": { jersey: 10, pos: "FW", club: "Inter Miami", age: 38, height: "170 cm", weight: "72 kg", skills: [80, 91, 94, 93, 35, 65] },
+      "Harry Kane": { jersey: 9, pos: "FW", club: "Bayern Munich", age: 32, height: "188 cm", weight: "86 kg", skills: [70, 93, 84, 81, 45, 82] },
+      "Christian Pulisic": { jersey: 10, pos: "MF", club: "AC Milan", age: 27, height: "178 cm", weight: "73 kg", skills: [88, 80, 78, 86, 38, 68] },
+      "Vinicius Junior": { jersey: 7, pos: "FW", club: "Real Madrid", age: 25, height: "176 cm", weight: "73 kg", skills: [95, 82, 79, 90, 29, 68] },
+      "Vinícius Júnior": { jersey: 7, pos: "FW", club: "Real Madrid", age: 25, height: "176 cm", weight: "73 kg", skills: [95, 82, 79, 90, 29, 68] },
+      "Alvaro Morata": { jersey: 7, pos: "FW", club: "AC Milan", age: 33, height: "189 cm", weight: "84 kg", skills: [80, 82, 72, 78, 40, 76] },
+      "Álvaro Morata": { jersey: 7, pos: "FW", club: "AC Milan", age: 33, height: "189 cm", weight: "84 kg", skills: [80, 82, 72, 78, 40, 76] },
+      "Robert Lewandowski": { jersey: 9, pos: "FW", club: "Barcelona", age: 37, height: "185 cm", weight: "81 kg", skills: [75, 89, 79, 82, 42, 78] }
+    };
+
+    const key = playerName.trim();
+    if (db[key]) return db[key];
+
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash = key.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const absHash = Math.abs(hash);
+    
+    const positions = ["FW", "MF", "DF", "GK"];
+    const pos = positions[absHash % positions.length];
+    const jersey = (absHash % 23) + 1;
+    
+    const age = 20 + (absHash % 16); 
+    const height = `${170 + (absHash % 26)} cm`; 
+    const weight = `${65 + (absHash % 26)} kg`; 
+    
+    const clubs = ["Real Madrid", "Manchester City", "Barcelona", "Liverpool", "Bayern Munich", "Arsenal", "Paris Saint-Germain", "Juventus", "Inter Milan", "Chelsea", "AC Milan", "Al Hilal"];
+    const club = clubs[absHash % clubs.length];
+    
+    let skills = [];
+    if (pos === "FW") {
+      skills = [80 + (absHash % 18), 80 + (absHash % 16), 70 + (absHash % 20), 75 + (absHash % 20), 30 + (absHash % 20), 65 + (absHash % 25)];
+    } else if (pos === "MF") {
+      skills = [75 + (absHash % 18), 70 + (absHash % 18), 80 + (absHash % 18), 80 + (absHash % 16), 55 + (absHash % 25), 70 + (absHash % 20)];
+    } else if (pos === "DF") {
+      skills = [70 + (absHash % 20), 50 + (absHash % 25), 65 + (absHash % 25), 60 + (absHash % 25), 80 + (absHash % 17), 75 + (absHash % 21)];
+    } else {
+      skills = [45 + (absHash % 20), 80 + (absHash % 18), 70 + (absHash % 25), 75 + (absHash % 20), 78 + (absHash % 20), 65 + (absHash % 25)];
+    }
+    
+    return { jersey, pos, club, age, height, weight, skills };
+  },
+
+  // Wikipedia Bio + Radar Chart Player Detail Card
+  PlayerDetailCard(player, isCn) {
+    const extra = this.getPlayerExtraDetails(player.player.name);
+    const card = Utils.el('div', { className: 'player-detail-card card' });
+
+    // Gradient Header
+    const header = Utils.el('div', { className: 'player-detail-header' });
+    const bgPattern = Utils.el('div', { className: 'player-detail-header-bg' });
+    
+    // Outline Jersey number
+    const jerseyText = Utils.el('div', { className: 'player-detail-jersey-large' }, `#${extra.jersey}`);
+    header.appendChild(bgPattern);
+    header.appendChild(jerseyText);
+
+    // Left info
+    const infoLeft = Utils.el('div', { className: 'player-detail-info-left' });
+    const teamBadge = Utils.el('div', { className: 'player-detail-team' });
+    const teamFlag = this.createFlag(player.team.crest, player.team.name, 'flag-sm');
+    teamFlag.style.borderRadius = '50%';
+    teamBadge.appendChild(teamFlag);
+    teamBadge.appendChild(Utils.el('span', {}, I18n.tTeam(player.team.name)));
+    infoLeft.appendChild(teamBadge);
+
+    const name = Utils.el('h2', { className: 'player-detail-name' }, I18n.tPlayer(player.player.name));
+    infoLeft.appendChild(name);
+
+    const posBadge = Utils.el('span', { className: 'player-detail-pos-badge' }, 
+      (extra.pos === 'FW' ? (isCn ? '前锋' : 'Forward') : 
+       extra.pos === 'MF' ? (isCn ? '中场' : 'Midfielder') : 
+       extra.pos === 'DF' ? (isCn ? '后卫' : 'Defender') : (isCn ? '门将' : 'Goalkeeper'))
+    );
+    infoLeft.appendChild(posBadge);
+    header.appendChild(infoLeft);
+
+    // Right avatar
+    const avatar = this.createPlayerAvatar(player.player.name, 'player-detail-avatar');
+    header.appendChild(avatar);
+    card.appendChild(header);
+
+    // Vitals grid
+    const vitals = Utils.el('div', { className: 'player-vitals-grid' });
+    const makeVital = (label, val) => {
+      const item = Utils.el('div', { className: 'vital-item' });
+      item.appendChild(Utils.el('span', { className: 'vital-label' }, label));
+      item.appendChild(Utils.el('span', { className: 'vital-val' }, val));
+      return item;
+    };
+    vitals.appendChild(makeVital(I18n.t('players.club'), I18n.tClub(extra.club)));
+    vitals.appendChild(makeVital(I18n.t('players.age'), extra.age));
+    vitals.appendChild(makeVital(I18n.t('players.height'), extra.height));
+    vitals.appendChild(makeVital(I18n.t('players.weight'), extra.weight));
+    card.appendChild(vitals);
+
+    // Tabs inside the card
+    const tabsContainer = Utils.el('div', { className: 'player-tabs' });
+    const tabHeaders = Utils.el('div', { className: 'player-tabs-headers' });
+    const tabContents = Utils.el('div', { className: 'player-tabs-contents' });
+
+    const tabs = [
+      { id: 'bio', label: I18n.t('players.bioTitle') },
+      { id: 'stats', label: I18n.t('players.statsTitle') },
+      { id: 'skills', label: I18n.t('players.skillsTitle') }
+    ];
+
+    const tabElMap = {};
+    const contentElMap = {};
+
+    // 1. Bio Content
+    const bioContent = Utils.el('div', { className: 'player-tab-pane active' });
+    const bioText = Utils.el('div', { className: 'player-bio-text' }, isCn ? '正在从维基百科加载个人简介...' : 'Loading biography from Wikipedia...');
+    bioContent.appendChild(bioText);
+    contentElMap['bio'] = bioContent;
+
+    // Fetch bio asynchronously
+    const lookupName = isCn ? I18n.tPlayer(player.player.name) : player.player.name;
+    ApiService.getPlayerBio(lookupName, I18n.getLanguage()).then(bio => {
+      if (bio) {
+        bioText.innerHTML = '';
+        bioText.appendChild(Utils.el('p', { style: { lineHeight: '1.6', fontSize: '0.85rem' } }, bio));
+      } else {
+        bioText.innerHTML = '';
+        const fallbackBio = isCn ? 
+          `${I18n.tPlayer(player.player.name)}（生于 ${2026 - extra.age} 年），是一位职业足球运动员，在本次美加墨世界杯中代表 ${I18n.tTeam(player.team.name)} 国家队出战，目前效力于 ${I18n.tClub(extra.club)} 俱乐部，司职${I18n.tPos(extra.pos)}。` :
+          `${player.player.name} (born in ${2026 - extra.age}), is a professional football player representing ${player.team.name} national team in the FIFA World Cup 2026. He plays as a Forward for ${extra.club}.`;
+        bioText.appendChild(Utils.el('p', { style: { lineHeight: '1.6', fontSize: '0.85rem', fontStyle: 'italic', color: 'var(--text-3)' } }, fallbackBio));
+      }
+    });
+
+    // 2. Stats Content
+    const statsContent = Utils.el('div', { className: 'player-tab-pane' });
+    const statsGrid = Utils.el('div', { className: 'player-stats-grid' });
+    const makeStat = (val, label) => {
+      const item = Utils.el('div', { className: 'stat-box' });
+      item.appendChild(Utils.el('div', { className: 'stat-box-val' }, val));
+      item.appendChild(Utils.el('div', { className: 'stat-box-label' }, label));
+      return item;
+    };
+    statsGrid.appendChild(makeStat(player.goals ?? 0, I18n.t('players.goals')));
+    statsGrid.appendChild(makeStat(player.assists ?? 0, I18n.t('players.assistsCount')));
+    statsGrid.appendChild(makeStat(player.penalties ?? 0, I18n.t('players.penalties')));
+    
+    // Games played (estimated to be 3 for simplicity)
+    const gp = 3;
+    const gaRatio = (((player.goals || 0) + (player.assists || 0)) / gp).toFixed(2);
+    statsGrid.appendChild(makeStat(gp, I18n.t('players.games')));
+    statsGrid.appendChild(makeStat(gaRatio, isCn ? '场均造球' : 'G/A per Match'));
+    statsContent.appendChild(statsGrid);
+    contentElMap['stats'] = statsContent;
+
+    // 3. Skills Content (Radar Chart)
+    const skillsContent = Utils.el('div', { className: 'player-tab-pane', style: { padding: '0.5rem 0' } });
+    const canvas = Utils.el('canvas', { id: 'player-skills-canvas', style: { width: '100%', height: '220px', display: 'block' } });
+    skillsContent.appendChild(canvas);
+    contentElMap['skills'] = skillsContent;
+
+    // Trigger radar chart render when the skills tab is active
+    let radarDrawn = false;
+    const triggerRadarDraw = () => {
+      if (radarDrawn) return;
+      setTimeout(() => {
+        this.drawPlayerRadarChart('player-skills-canvas', extra.skills, isCn);
+        radarDrawn = true;
+      }, 50);
+    };
+
+    // Build Tab Headers
+    tabs.forEach(tab => {
+      const tabBtn = Utils.el('button', {
+        className: `player-tab-btn ${tab.id === 'bio' ? 'active' : ''}`,
+        onClick: () => {
+          // Switch active tabs
+          Object.keys(tabElMap).forEach(key => tabElMap[key].classList.remove('active'));
+          Object.keys(contentElMap).forEach(key => contentElMap[key].classList.remove('active'));
+          
+          tabBtn.classList.add('active');
+          contentElMap[tab.id].classList.add('active');
+
+          if (tab.id === 'skills') {
+            triggerRadarDraw();
+          }
+        }
+      }, tab.label);
+      tabElMap[tab.id] = tabBtn;
+      tabHeaders.appendChild(tabBtn);
+      tabContents.appendChild(contentElMap[tab.id]);
+    });
+
+    tabsContainer.appendChild(tabHeaders);
+    tabsContainer.appendChild(tabContents);
+    card.appendChild(tabsContainer);
+
+    return card;
+  },
+
+  // ========== Banner Carousel (Xiaohongshu style) ==========
+  BannerCarousel(banners, lang) {
+    if (!banners || banners.length === 0) return document.createDocumentFragment();
+
+    const container = Utils.el('div', { className: 'banner-carousel' });
+    const track = Utils.el('div', { className: 'carousel-track' });
+    
+    let activeIdx = 0;
+    const dots = [];
+
+    banners.forEach((b, idx) => {
+      const slide = Utils.el('div', { className: `carousel-slide ${idx === 0 ? 'active' : ''}` });
+      
+      const img = Utils.el('img', { className: 'carousel-img', src: b.cover, alt: b.title[lang] || b.title['en'] });
+      slide.appendChild(img);
+
+      const overlay = Utils.el('div', { className: 'carousel-overlay' });
+      slide.appendChild(overlay);
+
+      const content = Utils.el('div', { className: 'carousel-content' });
+      
+      const liveBadge = Utils.el('span', { className: 'carousel-badge' });
+      const badgeText = lang === 'zh-CN' ? '精彩看点' : 'Highlights';
+      liveBadge.innerHTML = `<span class="live-pulse"></span>${badgeText}`;
+      content.appendChild(liveBadge);
+
+      const title = Utils.el('h2', { className: 'carousel-title' }, b.title[lang] || b.title['en']);
+      content.appendChild(title);
+
+      const playBtn = Utils.el('a', {
+        href: b.url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        className: 'carousel-btn'
+      });
+      const btnText = lang === 'zh-CN' ? '立即看视频' : 'Watch Video';
+      playBtn.innerHTML = `<span>▶</span> ${btnText}`;
+      content.appendChild(playBtn);
+
+      slide.appendChild(content);
+      track.appendChild(slide);
+    });
+    
+    container.appendChild(track);
+
+    const indicator = Utils.el('div', { className: 'carousel-dots' });
+    banners.forEach((_, idx) => {
+      const dot = Utils.el('span', {
+        className: `carousel-dot ${idx === 0 ? 'active' : ''}`,
+        onClick: () => goToSlide(idx)
+      });
+      dots.push(dot);
+      indicator.appendChild(dot);
+    });
+    container.appendChild(indicator);
+
+    const prevBtn = Utils.el('button', { className: 'carousel-nav-btn prev', onClick: () => prevSlide() }, '‹');
+    const nextBtn = Utils.el('button', { className: 'carousel-nav-btn next', onClick: () => nextSlide() }, '›');
+    container.appendChild(prevBtn);
+    container.appendChild(nextBtn);
+
+    function goToSlide(idx) {
+      const slides = track.querySelectorAll('.carousel-slide');
+      if (slides.length === 0) return;
+      slides[activeIdx].classList.remove('active');
+      dots[activeIdx].classList.remove('active');
+
+      activeIdx = (idx + banners.length) % banners.length;
+
+      slides[activeIdx].classList.add('active');
+      dots[activeIdx].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(activeIdx + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(activeIdx - 1);
+    }
+
+    const intervalId = setInterval(nextSlide, 5000);
+    container.dataset.intervalId = intervalId;
+
+    return container;
+  },
+
+  // Draw Player Radar Chart using Canvas
+  drawPlayerRadarChart(canvasId, skills, isCn) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Handle high DPI screens
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+
+    const width = rect.width;
+    const height = rect.height;
+    const centerX = width / 2;
+    const centerY = height / 2 - 5; // offset slightly up for labels
+    const maxRadius = Math.min(width, height) * 0.35;
+
+    const labels = isCn ? 
+      ['速度 (PAC)', '射门 (SHO)', '传球 (PAS)', '盘带 (DRI)', '防守 (DEF)', '力量 (PHY)'] :
+      ['Pace (PAC)', 'Shooting (SHO)', 'Passing (PAS)', 'Dribbling (DRI)', 'Defending (DEF)', 'Physical (PHY)'];
+
+    // 1. Concentric background polygons (5 levels)
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+    const isLightTheme = document.documentElement.classList.contains('light-theme') || 
+                          window.getComputedStyle(document.body).getPropertyValue('--background').trim() === '#f4f4f6';
+    if (isLightTheme) {
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
+    }
+    ctx.lineWidth = 1;
+
+    for (let level = 1; level <= 5; level++) {
+      const radius = (maxRadius / 5) * level;
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI / 3) * i - Math.PI / 2;
+        const x = centerX + Math.cos(angle) * radius;
+        const y = centerY + Math.sin(angle) * radius;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    // 2. Axes
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const angle = (Math.PI / 3) * i - Math.PI / 2;
+      ctx.moveTo(centerX, centerY);
+      ctx.lineTo(centerX + Math.cos(angle) * maxRadius, centerY + Math.sin(angle) * maxRadius);
+    }
+    ctx.stroke();
+
+    // 3. Player Stats shape
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const val = skills[i] || 50;
+      const radius = (maxRadius * val) / 100;
+      const angle = (Math.PI / 3) * i - Math.PI / 2;
+      const x = centerX + Math.cos(angle) * radius;
+      const y = centerY + Math.sin(angle) * radius;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+
+    // Gradient fill
+    const gradient = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, maxRadius);
+    gradient.addColorStop(0, 'rgba(235, 94, 40, 0.15)');
+    gradient.addColorStop(1, 'rgba(235, 94, 40, 0.45)');
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    ctx.strokeStyle = '#eb5e28';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // 4. Dot markers + values
+    for (let i = 0; i < 6; i++) {
+      const val = skills[i] || 50;
+      const radius = (maxRadius * val) / 100;
+      const angle = (Math.PI / 3) * i - Math.PI / 2;
+      const x = centerX + Math.cos(angle) * radius;
+      const y = centerY + Math.sin(angle) * radius;
+
+      // Draw dot
+      ctx.fillStyle = '#eb5e28';
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Value text
+      ctx.fillStyle = isLightTheme ? '#252422' : '#f4f4f6';
+      ctx.font = 'bold 9px var(--font-body, sans-serif)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      const valOffset = radius > 15 ? 12 : -12;
+      const valX = centerX + Math.cos(angle) * (radius + valOffset);
+      const valY = centerY + Math.sin(angle) * (radius + valOffset);
+      ctx.fillText(val, valX, valY);
+    }
+
+    // 5. Labels
+    ctx.fillStyle = isLightTheme ? '#403d39' : '#ccc';
+    ctx.font = 'bold 10px var(--font-body, sans-serif)';
+    for (let i = 0; i < 6; i++) {
+      const angle = (Math.PI / 3) * i - Math.PI / 2;
+      const labelRadius = maxRadius + 15;
+      const x = centerX + Math.cos(angle) * labelRadius;
+      const y = centerY + Math.sin(angle) * labelRadius;
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      // Fine-tune labels alignment
+      if (Math.abs(Math.cos(angle)) < 0.1) {
+        ctx.textAlign = 'center';
+      } else if (Math.cos(angle) > 0) {
+        ctx.textAlign = 'left';
+      } else {
+        ctx.textAlign = 'right';
+      }
+      ctx.fillText(labels[i], x, y);
+    }
   }
 };

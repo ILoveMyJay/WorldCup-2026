@@ -1,0 +1,6 @@
+# Cloudflare Pages project — local dev secrets
+# Copy this file to .dev.vars and fill in your API keys
+# .dev.vars is loaded automatically by `wrangler pages dev`
+
+FOOTBALL_API_KEY=your_football_data_org_api_key_here
+GNEWS_API_KEY=your_gnews_io_api_key_here

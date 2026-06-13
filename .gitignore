@@ -6,3 +6,7 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Cloudflare — local dev secrets (API keys)
+.dev.vars
+.wrangler/

@@ -1,0 +1,13 @@
+{
+  "name": "worldcup-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FIFA World Cup 2026 Information Portal",
+  "scripts": {
+    "dev": "npx wrangler pages dev . --port 8788 --compatibility-date 2024-09-23",
+    "deploy": "npx wrangler pages deploy ."
+  },
+  "devDependencies": {
+    "wrangler": "^3"
+  }
+}

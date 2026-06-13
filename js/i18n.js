@@ -70,6 +70,27 @@ const I18n = {
       'players.assistsCount': '助攻数',
       'players.penalties': '点球数',
       'players.visualTitle': '神射手进球分布对比 (Top 10)',
+      'players.searchPlaceholder': '搜索球员或国家队...',
+      'players.tabScorers': '最佳射手',
+      'players.tabAssists': '最佳助攻',
+      'players.tabPKs': '点球射手',
+      'players.selectHint': '点击列表中的球员查看详细履历与能力数据',
+      'players.bioTitle': '个人简介',
+      'players.statsTitle': '生涯统计',
+      'players.skillsTitle': '能力分布',
+      'players.club': '效力俱乐部',
+      'players.jersey': '球衣号码',
+      'players.age': '年龄',
+      'players.height': '身高',
+      'players.weight': '体重',
+      'players.pos': '场上位置',
+      'players.games': '出场次数',
+      'players.attribute.pace': '速度',
+      'players.attribute.shooting': '射门',
+      'players.attribute.passing': '传球',
+      'players.attribute.dribbling': '盘带',
+      'players.attribute.defending': '防守',
+      'players.attribute.physical': '力量',
       
       // Match Details
       'match.details': '比赛详情',
@@ -165,6 +186,27 @@ const I18n = {
       'players.assistsCount': 'Assists',
       'players.penalties': 'PKs',
       'players.visualTitle': 'Top 10 Scorers Goals Comparison',
+      'players.searchPlaceholder': 'Search players or national teams...',
+      'players.tabScorers': 'Goals',
+      'players.tabAssists': 'Assists',
+      'players.tabPKs': 'Penalties',
+      'players.selectHint': 'Click a player to view detailed profile and stats',
+      'players.bioTitle': 'Biography',
+      'players.statsTitle': 'Career Statistics',
+      'players.skillsTitle': 'Skill Attributes',
+      'players.club': 'Club',
+      'players.jersey': 'Jersey Number',
+      'players.age': 'Age',
+      'players.height': 'Height',
+      'players.weight': 'Weight',
+      'players.pos': 'Position',
+      'players.games': 'Matches',
+      'players.attribute.pace': 'Pace',
+      'players.attribute.shooting': 'Shooting',
+      'players.attribute.passing': 'Passing',
+      'players.attribute.dribbling': 'Dribbling',
+      'players.attribute.defending': 'Defending',
+      'players.attribute.physical': 'Physical',
       
       // Match Details
       'match.details': 'Match Details',
@@ -215,6 +257,7 @@ const I18n = {
     'Benin': '贝宁',
     'Bolivia': '玻利维亚',
     'Bosnia and Herzegovina': '波黑',
+    'Bosnia-Herzegovina': '波黑',
     'Brazil': '巴西',
     'Bulgaria': '保加利亚',
     'Burkina Faso': '布基纳法索',
@@ -222,6 +265,7 @@ const I18n = {
     'Cameroon': '喀麦隆',
     'Canada': '加拿大',
     'Cape Verde': '佛得角',
+    'Cape Verde Islands': '佛得角',
     'Chile': '智利',
     'China': '中国',
     'China PR': '中国',
@@ -230,9 +274,11 @@ const I18n = {
     'Costa Rica': '哥斯达黎加',
     'Cote d\'Ivoire': '科特迪瓦',
     'Côte d\'Ivoire': '科特迪瓦',
+    'Ivory Coast': '科特迪瓦',
     'Croatia': '克罗地亚',
     'Cuba': '古巴',
     'Curacao': '库拉索',
+    'Curaçao': '库拉索',
     'Cyprus': '塞浦路斯',
     'Czech Republic': '捷克',
     'Czechia': '捷克',
@@ -256,6 +302,8 @@ const I18n = {
     'Guatemala': '危地马拉',
     'Guinea': '几内亚',
     'Guinea-Bissau': '几内亚比绍',
+    'Haiti': '海地',
+    'Haïti': '海地',
     'Honduras': '洪都拉斯',
     'Hungary': '匈牙利',
     'Iceland': '冰岛',
@@ -369,7 +417,38 @@ const I18n = {
       .replace(/^Republic of\s+/, '')
       .trim();
       
-    return this.teamTranslations[cleanName] || this.teamTranslations[name] || name;
+    if (this.teamTranslations[cleanName]) return this.teamTranslations[cleanName];
+
+    // Regex matching for placeholder teams in knockout stages (e.g. Winner Group A, Runner-up Group B)
+    if (/^Winner\s+Group\s+([A-L])$/i.test(name)) {
+      return name.replace(/^Winner\s+Group\s+([A-L])$/i, '$1组第一');
+    }
+    if (/^Runner-up\s+Group\s+([A-L])$/i.test(name)) {
+      return name.replace(/^Runner-up\s+Group\s+([A-L])$/i, '$1组第二');
+    }
+    if (/^Winner\s+Match\s+(\d+)$/i.test(name)) {
+      return name.replace(/^Winner\s+Match\s+(\d+)$/i, '第 $1 场胜者');
+    }
+    if (/^Winner\s+R32\s+(\d+)$/i.test(name)) {
+      return name.replace(/^Winner\s+R32\s+(\d+)$/i, '32强第 $1 场胜者');
+    }
+    if (/^Winner\s+R16\s+(\d+)$/i.test(name)) {
+      return name.replace(/^Winner\s+R16\s+(\d+)$/i, '16强第 $1 场胜者');
+    }
+    if (/^Winner\s+QF\s+(\d+)$/i.test(name)) {
+      return name.replace(/^Winner\s+QF\s+(\d+)$/i, '八强第 $1 场胜者');
+    }
+    if (/^Winner\s+SF\s+(\d+)$/i.test(name)) {
+      return name.replace(/^Winner\s+SF\s+(\d+)$/i, '半决赛第 $1 场胜者');
+    }
+    if (/^Winner\s+Play-off\s*(\d*)$/i.test(name)) {
+      return name.replace(/^Winner\s+Play-off\s*(\d*)$/i, '附加赛胜者 $1').trim();
+    }
+    if (/^To\s+Be\s+Decided$/i.test(name) || name === 'TBD') {
+      return '待定';
+    }
+
+    return name;
   },
 
   // Get current language
@@ -387,5 +466,159 @@ const I18n = {
         window.App.reRender();
       }
     }
+  },
+
+  playerTranslations: {
+    'Kylian Mbappé': '基利安·姆巴佩',
+    'Kylian Mbappe': '基利安·姆巴佩',
+    'Lionel Messi': '利昂内尔·梅西',
+    'Harry Kane': '哈里·凯恩',
+    'Christian Pulisic': '克里斯蒂安·普利西奇',
+    'Vinicius Junior': '维尼修斯·儒尼奥尔',
+    'Vinícius Júnior': '维尼修斯·儒尼奥尔',
+    'Alvaro Morata': '阿尔瓦罗·莫拉塔',
+    'Álvaro Morata': '阿尔瓦罗·莫拉塔',
+    'Robert Lewandowski': '罗伯特·莱万多夫斯基',
+    // Argentina
+    'Julián Álvarez': '胡利安·阿尔瓦雷斯',
+    'Julian Alvarez': '胡利安·阿尔瓦雷斯',
+    'Enzo Fernández': '恩佐·费尔南德斯',
+    'Enzo Fernandez': '恩佐·费尔南德斯',
+    'Alexis Mac Allister': '亚历克西斯·麦卡利斯特',
+    'Lautaro Martínez': '劳塔罗·马丁内斯',
+    'Lautaro Martinez': '劳塔罗·马丁内斯',
+    // Brazil
+    'Neymar Jr': '内马尔',
+    'Neymar': '内马尔',
+    'Rodrygo': '罗德里戈',
+    'Bruno Guimarães': '布鲁诺·吉马良斯',
+    'Bruno Guimaraes': '布鲁诺·吉马良斯',
+    'Marquinhos': '马尔基尼奥斯',
+    // France
+    'Antoine Griezmann': '安东尼·格里兹曼',
+    'Ousmane Dembélé': '奥斯曼·登贝莱',
+    'Ousmane Dembele': '奥斯曼·登贝莱',
+    'Aurélien Tchouaméni': '奥雷利安·楚阿梅尼',
+    'Aurelien Tchouameni': '奥雷利安·楚阿梅尼',
+    'Theo Hernández': '特奥·埃尔南德斯',
+    'Theo Hernandez': '特奥·埃尔南德斯',
+    // England
+    'Jude Bellingham': '朱德·贝林厄姆',
+    'Bukayo Saka': '布卡约·萨卡',
+    'Phil Foden': '菲尔·福登',
+    'Declan Rice': '德克兰·赖斯',
+    // Germany
+    'Jamal Musiala': '贾马尔·穆西亚拉',
+    'Florian Wirtz': '弗洛里安·维尔茨',
+    'Kai Havertz': '凯·哈弗茨',
+    'Joshua Kimmich': '约书亚·基米希',
+    'Antonio Rüdiger': '安东尼奥·吕迪格',
+    'Antonio Rudiger': '安东尼奥·吕迪格',
+    // Spain
+    'Lamine Yamal': '拉明·亚马尔',
+    'Pedri': '佩德里',
+    'Rodri': '罗德里',
+    'Dani Carvajal': '丹尼·卡瓦哈尔',
+    // Portugal
+    'Cristiano Ronaldo': '克里斯蒂亚诺·罗纳尔多',
+    'Bruno Fernandes': '布鲁诺·费尔南德斯',
+    'Bernardo Silva': '贝尔纳多·席尔瓦',
+    'Rafael Leão': '拉斐尔·莱奥',
+    'Rafael Leao': '拉斐尔·莱奥',
+    'Rúben Dias': '鲁本·迪亚斯',
+    'Ruben Dias': '鲁本·迪亚斯',
+    // United States
+    'Weston McKennie': '韦斯顿·麦肯尼',
+    'Timothy Weah': '蒂莫西·维阿',
+    'Tyler Adams': '泰勒·亚当斯',
+    'Matt Turner': '马特·特纳',
+    // Canada
+    'Alphonso Davies': '阿方索·戴维斯',
+    'Jonathan David': '乔纳森·戴维',
+    'Cyle Larin': '塞林·拉林',
+    'Stephen Eustáquio': '斯蒂芬·欧斯塔基奥',
+    'Stephen Eustaquio': '斯蒂芬·欧斯塔基奥',
+    'Tajon Buchanan': '泰江·布坎南',
+    // Mexico
+    'Santiago Giménez': '圣地亚哥·希门尼斯',
+    'Santiago Gimenez': '圣地亚哥·希门尼斯',
+    'Hirving Lozano': '伊尔温·洛萨诺',
+    'Edson Álvarez': '埃德森·阿尔瓦雷斯',
+    'Edson Alvarez': '埃德森·阿尔瓦雷斯',
+    'Guillermo Ochoa': '吉列尔莫·奥乔亚',
+    'Luis Chávez': '路易斯·查韦斯',
+    'Luis Chavez': '路易斯·查韦斯',
+    'Folarin Balogun': '弗拉林·巴洛贡',
+    'Julián Quiñones': '胡利安·基尼奥内斯',
+    'Raúl Jiménez': '劳尔·希门尼斯',
+    'Ladislav Krejčí': '拉迪斯拉夫·克雷伊奇',
+    'In-beom Hwang': '黄仁范',
+    'Hyun-Gyu Oh': '吴贤揆',
+    'Jovo Lukić': '乔沃·卢基奇',
+    'Mauricio': '毛里西奥',
+    'Gio Reyna': '乔瓦尼·雷纳'
+  },
+  
+  clubTranslations: {
+    'Real Madrid': '皇家马德里',
+    'Inter Miami': '迈阿密国际',
+    'Bayern Munich': '拜仁慕尼黑',
+    'AC Milan': 'AC米兰',
+    'Barcelona': '巴塞罗那',
+    'Manchester City': '曼彻斯特城',
+    'Liverpool': '利物浦',
+    'Arsenal': '阿森纳',
+    'Paris Saint-Germain': '巴黎圣日耳曼',
+    'Juventus': '尤文图斯',
+    'Inter Milan': '国际米兰',
+    'Chelsea': '切尔西',
+    'Al Hilal': '利雅得新月',
+    'Aston Villa': '阿斯顿维拉',
+    'Manchester United': '曼彻斯特联',
+    'Atletico Madrid': '马德里竞技',
+    'Atlético Madrid': '马德里竞技',
+    'Tottenham Hotspur': '托特纳姆热刺',
+    'Bayer Leverkusen': '勒沃库森',
+    'Real Sociedad': '皇家社会',
+    'FC Porto': '波尔图',
+    'Lille': '里尔',
+    'Feyenoord': '费耶诺德',
+    'Bournemouth': '伯恩茅斯',
+    'Nottingham Forest': '诺丁汉森林',
+    'Crystal Palace': '水晶宫',
+    'Fulham': '富勒姆',
+    'AS Monaco': '摩纳哥',
+    'Marseille': '马赛',
+    'Nice': '尼斯',
+    'Lyon': '里昂'
+  },
+
+  posTranslations: {
+    'FW': '前锋',
+    'MF': '中场',
+    'DF': '后卫',
+    'GK': '门将',
+    'Offence': '前锋',
+    'Midfield': '中场',
+    'Defence': '后卫',
+    'Goalkeeper': '门将'
+  },
+
+  tPlayer(playerName) {
+    if (this.currentLang === 'en') return playerName;
+    if (!playerName) return '';
+    return this.playerTranslations[playerName.trim()] || playerName;
+  },
+
+  tClub(clubName) {
+    if (this.currentLang === 'en') return clubName;
+    if (!clubName) return '';
+    return this.clubTranslations[clubName.trim()] || clubName;
+  },
+
+  tPos(posCode) {
+    if (this.currentLang === 'en') return posCode;
+    if (!posCode) return '';
+    return this.posTranslations[posCode.trim()] || posCode;
   }
 };

@@ -4,216 +4,4226 @@
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
       "table": [
-        {"position": 1, "team": {"id": 1, "name": "United States", "crest": "https://crests.football-data.org/772.svg"}, "playedGames": 3, "won": 2, "draw": 1, "lost": 0, "points": 7, "goalsFor": 6, "goalsAgainst": 2, "goalDifference": 4},
-        {"position": 2, "team": {"id": 2, "name": "Mexico", "crest": "https://crests.football-data.org/794.svg"}, "playedGames": 3, "won": 1, "draw": 2, "lost": 0, "points": 5, "goalsFor": 4, "goalsAgainst": 2, "goalDifference": 2},
-        {"position": 3, "team": {"id": 3, "name": "Australia", "crest": "https://crests.football-data.org/779.svg"}, "playedGames": 3, "won": 1, "draw": 1, "lost": 1, "points": 4, "goalsFor": 3, "goalsAgainst": 4, "goalDifference": -1},
-        {"position": 4, "team": {"id": 4, "name": "Austria", "crest": "https://crests.football-data.org/776.svg"}, "playedGames": 3, "won": 0, "draw": 0, "lost": 3, "points": 0, "goalsFor": 1, "goalsAgainst": 6, "goalDifference": -5}
+        {
+          "team": {
+            "id": 11764,
+            "name": "Mexico",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6226bp9cg49g0000000001d08931i"
+          },
+          "playedGames": 1,
+          "won": 1,
+          "draw": 0,
+          "lost": 0,
+          "points": 3,
+          "goalsFor": 2,
+          "goalsAgainst": 0,
+          "goalDifference": 2,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 10586,
+            "name": "South Korea",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls2mbp9cg49g00000000019ua49fe"
+          },
+          "playedGames": 1,
+          "won": 1,
+          "draw": 0,
+          "lost": 0,
+          "points": 3,
+          "goalsFor": 2,
+          "goalsAgainst": 1,
+          "goalDifference": 1,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 10979,
+            "name": "Czechia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr622mbp9cg49g0000000001fqdocci"
+          },
+          "playedGames": 1,
+          "won": 0,
+          "draw": 0,
+          "lost": 1,
+          "points": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
+          "goalDifference": -1,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 10310,
+            "name": "South Africa",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m1mbp9cg49g0000000001asedgtu"
+          },
+          "playedGames": 1,
+          "won": 0,
+          "draw": 0,
+          "lost": 1,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 2,
+          "goalDifference": -2,
+          "position": 4
+        }
       ]
     },
     {
       "stage": "GROUP_STAGE",
       "group": "GROUP_B",
       "table": [
-        {"position": 1, "team": {"id": 5, "name": "Argentina", "crest": "https://crests.football-data.org/762.svg"}, "playedGames": 3, "won": 3, "draw": 0, "lost": 0, "points": 9, "goalsFor": 8, "goalsAgainst": 1, "goalDifference": 7},
-        {"position": 2, "team": {"id": 6, "name": "Poland", "crest": "https://crests.football-data.org/795.svg"}, "playedGames": 3, "won": 1, "draw": 1, "lost": 1, "points": 4, "goalsFor": 3, "goalsAgainst": 4, "goalDifference": -1},
-        {"position": 3, "team": {"id": 7, "name": "Saudi Arabia", "crest": "https://crests.football-data.org/801.svg"}, "playedGames": 3, "won": 1, "draw": 0, "lost": 2, "points": 3, "goalsFor": 2, "goalsAgainst": 5, "goalDifference": -3},
-        {"position": 4, "team": {"id": 8, "name": "Ecuador", "crest": "https://crests.football-data.org/825.svg"}, "playedGames": 3, "won": 0, "draw": 1, "lost": 2, "points": 1, "goalsFor": 2, "goalsAgainst": 5, "goalDifference": -3}
+        {
+          "team": {
+            "id": 10478,
+            "name": "Bosnia and Herzegovina",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m4mbp9cg49g0000000001d2alig4"
+          },
+          "playedGames": 1,
+          "won": 0,
+          "draw": 1,
+          "lost": 0,
+          "points": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 11138,
+            "name": "Canada",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm2mbp9cg49g0000000001b0fr8sk"
+          },
+          "playedGames": 1,
+          "won": 0,
+          "draw": 1,
+          "lost": 0,
+          "points": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 10871,
+            "name": "Switzerland",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr621mbp9cg49g0000000001cgkju66"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 11289,
+            "name": "Qatar",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls3mbp9cg49g0000000001853ef5a"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
       ]
     },
     {
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
       "table": [
-        {"position": 1, "team": {"id": 9, "name": "France", "crest": "https://crests.football-data.org/773.svg"}, "playedGames": 2, "won": 2, "draw": 0, "lost": 0, "points": 6, "goalsFor": 5, "goalsAgainst": 1, "goalDifference": 4},
-        {"position": 2, "team": {"id": 10, "name": "Switzerland", "crest": "https://crests.football-data.org/788.svg"}, "playedGames": 2, "won": 1, "draw": 0, "lost": 1, "points": 3, "goalsFor": 3, "goalsAgainst": 3, "goalDifference": 0},
-        {"position": 3, "team": {"id": 11, "name": "Japan", "crest": "https://crests.football-data.org/766.svg"}, "playedGames": 2, "won": 1, "draw": 0, "lost": 1, "points": 3, "goalsFor": 2, "goalsAgainst": 2, "goalDifference": 0},
-        {"position": 4, "team": {"id": 12, "name": "Cameroon", "crest": "https://crests.football-data.org/1903.svg"}, "playedGames": 2, "won": 0, "draw": 0, "lost": 2, "points": 0, "goalsFor": 1, "goalsAgainst": 5, "goalDifference": -4}
+        {
+          "team": {
+            "id": 10477,
+            "name": "Brazil",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2dbsqle06bp9cg49g0000000001bnd1fnc"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 10868,
+            "name": "Scotland",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls3mbp9cg49g0000000001ep8418i"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 11089,
+            "name": "Haiti",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm1mbp9cg49g0000000001aj7lhpa"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 11763,
+            "name": "Morocco",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6216bp9cg49g0000000001evf29li"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
       ]
     },
     {
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
       "table": [
-        {"position": 1, "team": {"id": 13, "name": "Brazil", "crest": "https://crests.football-data.org/764.svg"}, "playedGames": 2, "won": 2, "draw": 0, "lost": 0, "points": 6, "goalsFor": 4, "goalsAgainst": 0, "goalDifference": 4},
-        {"position": 2, "team": {"id": 14, "name": "Colombia", "crest": "https://crests.football-data.org/828.svg"}, "playedGames": 2, "won": 1, "draw": 1, "lost": 0, "points": 4, "goalsFor": 2, "goalsAgainst": 1, "goalDifference": 1},
-        {"position": 3, "team": {"id": 15, "name": "South Korea", "crest": "https://crests.football-data.org/770.svg"}, "playedGames": 2, "won": 0, "draw": 1, "lost": 1, "points": 1, "goalsFor": 1, "goalsAgainst": 3, "goalDifference": -2},
-        {"position": 4, "team": {"id": 16, "name": "Egypt", "crest": "https://crests.football-data.org/1911.svg"}, "playedGames": 2, "won": 0, "draw": 0, "lost": 2, "points": 0, "goalsFor": 0, "goalsAgainst": 3, "goalDifference": -3}
+        {
+          "team": {
+            "id": 13611,
+            "name": "United States",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn681mbp9cg49g0000000001ag8l4qo"
+          },
+          "playedGames": 1,
+          "won": 1,
+          "draw": 0,
+          "lost": 0,
+          "points": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 1,
+          "goalDifference": 3,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 13337,
+            "name": "Turkey",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060681mbp9cg49g0000000001dfi00oc"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 13832,
+            "name": "Australia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn684mbp9cg49g0000000001bku45ak"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 13449,
+            "name": "Paraguay",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060684mbp9cg49g00000000018hr23c0"
+          },
+          "playedGames": 1,
+          "won": 0,
+          "draw": 0,
+          "lost": 1,
+          "points": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 4,
+          "goalDifference": -3,
+          "position": 4
+        }
       ]
     },
     {
       "stage": "GROUP_STAGE",
       "group": "GROUP_E",
       "table": [
-        {"position": 1, "team": {"id": 17, "name": "England", "crest": "https://crests.football-data.org/770.svg"}, "playedGames": 2, "won": 2, "draw": 0, "lost": 0, "points": 6, "goalsFor": 6, "goalsAgainst": 1, "goalDifference": 5},
-        {"position": 2, "team": {"id": 18, "name": "Denmark", "crest": "https://crests.football-data.org/782.svg"}, "playedGames": 2, "won": 1, "draw": 0, "lost": 1, "points": 3, "goalsFor": 3, "goalsAgainst": 3, "goalDifference": 0},
-        {"position": 3, "team": {"id": 19, "name": "Canada", "crest": "https://crests.football-data.org/772.svg"}, "playedGames": 2, "won": 1, "draw": 0, "lost": 1, "points": 3, "goalsFor": 2, "goalsAgainst": 3, "goalDifference": -1},
-        {"position": 4, "team": {"id": 20, "name": "Morocco", "crest": "https://crests.football-data.org/1904.svg"}, "playedGames": 2, "won": 0, "draw": 0, "lost": 2, "points": 0, "goalsFor": 1, "goalsAgainst": 5, "goalDifference": -4}
+        {
+          "team": {
+            "id": 11082,
+            "name": "Ecuador",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rsh5m0mbp9cg49g00000000019noghte"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 11141,
+            "name": "Cote d'Ivoire",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm3mbp9cg49g0000000001ak3hvvs"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 11746,
+            "name": "Germany",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6206bp9cg49g00000000018i9t2k4"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 33203,
+            "name": "Curacao",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a2dbls0mbp9cg49g0000000001fkl4gpk"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
       ]
     },
     {
       "stage": "GROUP_STAGE",
       "group": "GROUP_F",
       "table": [
-        {"position": 1, "team": {"id": 21, "name": "Spain", "crest": "https://crests.football-data.org/760.svg"}, "playedGames": 2, "won": 1, "draw": 1, "lost": 0, "points": 4, "goalsFor": 4, "goalsAgainst": 1, "goalDifference": 3},
-        {"position": 2, "team": {"id": 22, "name": "Uruguay", "crest": "https://crests.football-data.org/784.svg"}, "playedGames": 2, "won": 1, "draw": 1, "lost": 0, "points": 4, "goalsFor": 2, "goalsAgainst": 1, "goalDifference": 1},
-        {"position": 3, "team": {"id": 23, "name": "Iran", "crest": "https://crests.football-data.org/802.svg"}, "playedGames": 2, "won": 0, "draw": 1, "lost": 1, "points": 1, "goalsFor": 2, "goalsAgainst": 4, "goalDifference": -2},
-        {"position": 4, "team": {"id": 24, "name": "Costa Rica", "crest": "https://crests.football-data.org/793.svg"}, "playedGames": 2, "won": 0, "draw": 1, "lost": 1, "points": 1, "goalsFor": 1, "goalsAgainst": 3, "goalDifference": -2}
+        {
+          "team": {
+            "id": 10869,
+            "name": "Sweden",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls4mbp9cg49g000000000192mif4q"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 10870,
+            "name": "Netherlands",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr620mbp9cg49g000000000187iqc66"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 13613,
+            "name": "Tunisia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn682mbp9cg49g0000000001dcegkei"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 14529,
+            "name": "Japan",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl623mbp9cg49g00000000019vaadk6"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "table": [
+        {
+          "team": {
+            "id": 10316,
+            "name": "Belgium",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m2mbp9cg49g0000000001c1l7mqk"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 13464,
+            "name": "Egypt",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn680mbp9cg49g0000000001foc2c58"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 14298,
+            "name": "Iran",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl621mbp9cg49g0000000001aqnqe4c"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 14400,
+            "name": "New Zealand",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl622mbp9cg49g0000000001asb5g0g"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "table": [
+        {
+          "team": {
+            "id": 10584,
+            "name": "Saudi Arabia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls1mbp9cg49g0000000001fn79d7s"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 11083,
+            "name": "Cape Verde",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm0mbp9cg49g00000000018cqr4cs"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 13447,
+            "name": "Uruguay",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060683mbp9cg49g0000000001cbfg5qc"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 14227,
+            "name": "Spain",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl620mbp9cg49g0000000001bu1d4t6"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "table": [
+        {
+          "team": {
+            "id": 10234,
+            "name": "France",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m0mbp9cg49g0000000001f7gfnnk"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 11288,
+            "name": "Iraq",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls2mbp9cg49g00000000019skssf6"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 13365,
+            "name": "Senegal",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060682mbp9cg49g0000000001f1kmd8s"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 13820,
+            "name": "Norway",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn683mbp9cg49g0000000001aof3qjc"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "table": [
+        {
+          "team": {
+            "id": 11267,
+            "name": "Jordan",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls1mbp9cg49g0000000001blmud6u"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 13226,
+            "name": "Austria",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060680mbp9cg49g0000000001eh8v2kk"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 13727,
+            "name": "Argentina",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2d81c5e06bp9cg49g0000000001equu8p6"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 23383,
+            "name": "Algeria",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl624mbp9cg49g0000000001av3clf2"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "table": [
+        {
+          "team": {
+            "id": 10476,
+            "name": "Colombia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m3mbp9cg49g0000000001bhqjuse"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 10582,
+            "name": "Uzbekistan",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls0mbp9cg49g00000000018dminp4"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 11142,
+            "name": "DR Congo",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls0mbp9cg49g0000000001dpf121m"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 13152,
+            "name": "Portugal",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6246bp9cg49g0000000001brvkrl6"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
+      ]
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "table": [
+        {
+          "team": {
+            "id": 11017,
+            "name": "Ghana",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr623mbp9cg49g000000000190odh3i"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 1
+        },
+        {
+          "team": {
+            "id": 11079,
+            "name": "England",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr624mbp9cg49g000000000185eomvo"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 2
+        },
+        {
+          "team": {
+            "id": 11606,
+            "name": "Croatia",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls4mbp9cg49g0000000001e6m3f0u"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 3
+        },
+        {
+          "team": {
+            "id": 12064,
+            "name": "Panama",
+            "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6236bp9cg49g0000000001d9j74sa"
+          },
+          "playedGames": 0,
+          "won": 0,
+          "draw": 0,
+          "lost": 0,
+          "points": 0,
+          "goalsFor": 0,
+          "goalsAgainst": 0,
+          "goalDifference": 0,
+          "position": 4
+        }
       ]
     }
   ],
   "matches": [
     {
-      "id": 101,
-      "utcDate": "2026-06-12T14:30:00Z",
-      "status": "LIVE",
+      "id": 4459820,
+      "utcDate": "2026-06-11T19:00:00.000Z",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
-      "group": "GROUP_C",
-      "matchday": 3,
-      "homeTeam": {"id": 9, "name": "France", "crest": "https://crests.football-data.org/773.svg"},
-      "awayTeam": {"id": 11, "name": "Japan", "crest": "https://crests.football-data.org/766.svg"},
+      "group": "GROUP_A",
+      "homeTeam": {
+        "id": 11764,
+        "name": "Mexico",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6226bp9cg49g0000000001d08931i"
+      },
+      "awayTeam": {
+        "id": 10310,
+        "name": "South Africa",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m1mbp9cg49g0000000001asedgtu"
+      },
       "score": {
         "winner": "HOME_TEAM",
-        "fullTime": {"home": 2, "away": 1},
-        "halfTime": {"home": 1, "away": 0}
+        "fullTime": {
+          "home": 2,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 1,
+          "away": 0
+        }
       },
-      "venue": "Estadio Azteca, Mexico City",
-      "referee": "Piero Maza (Chile)"
+      "venue": "2026年美加墨世界杯开幕式&揭幕战",
+      "referee": "FIFA Referee"
     },
     {
-      "id": 102,
-      "utcDate": "2026-06-12T17:00:00Z",
+      "id": 4460938,
+      "utcDate": "2026-06-12T02:00:00.000Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_A",
+      "homeTeam": {
+        "id": 10586,
+        "name": "South Korea",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls2mbp9cg49g00000000019ua49fe"
+      },
+      "awayTeam": {
+        "id": 10979,
+        "name": "Czechia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr622mbp9cg49g0000000001fqdocci"
+      },
+      "score": {
+        "winner": "HOME_TEAM",
+        "fullTime": {
+          "home": 2,
+          "away": 1
+        },
+        "halfTime": {
+          "home": 1,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：韩国 vs 捷克）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459824,
+      "utcDate": "2026-06-12T19:00:00.000Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 11138,
+        "name": "Canada",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm2mbp9cg49g0000000001b0fr8sk"
+      },
+      "awayTeam": {
+        "id": 10478,
+        "name": "Bosnia and Herzegovina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m4mbp9cg49g0000000001d2alig4"
+      },
+      "score": {
+        "winner": "DRAW",
+        "fullTime": {
+          "home": 1,
+          "away": 1
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：加拿大 vs 波黑）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459827,
+      "utcDate": "2026-06-13T01:00:00.000Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_D",
+      "homeTeam": {
+        "id": 13611,
+        "name": "United States",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn681mbp9cg49g0000000001ag8l4qo"
+      },
+      "awayTeam": {
+        "id": 13449,
+        "name": "Paraguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060684mbp9cg49g00000000018hr23c0"
+      },
+      "score": {
+        "winner": "HOME_TEAM",
+        "fullTime": {
+          "home": 4,
+          "away": 1
+        },
+        "halfTime": {
+          "home": 2,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：美国 vs 巴拉圭）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460941,
+      "utcDate": "2026-06-13T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 11289,
+        "name": "Qatar",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls3mbp9cg49g0000000001853ef5a"
+      },
+      "awayTeam": {
+        "id": 10871,
+        "name": "Switzerland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr621mbp9cg49g0000000001cgkju66"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：卡塔尔 vs 瑞士）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460910,
+      "utcDate": "2026-06-13T22:00:00.000Z",
       "status": "SCHEDULED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
-      "matchday": 3,
-      "homeTeam": {"id": 10, "name": "Switzerland", "crest": "https://crests.football-data.org/788.svg"},
-      "awayTeam": {"id": 12, "name": "Cameroon", "crest": "https://crests.football-data.org/1903.svg"},
+      "homeTeam": {
+        "id": 10477,
+        "name": "Brazil",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2dbsqle06bp9cg49g0000000001bnd1fnc"
+      },
+      "awayTeam": {
+        "id": 11763,
+        "name": "Morocco",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6216bp9cg49g0000000001evf29li"
+      },
       "score": {
         "winner": null,
-        "fullTime": {"home": null, "away": null},
-        "halfTime": {"home": null, "away": null}
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
       },
-      "venue": "SoFi Stadium, Los Angeles",
-      "referee": "Facundo Tello (Argentina)"
+      "venue": "小红书直播（世界杯小组赛：巴西 vs 摩洛哥）",
+      "referee": "FIFA Referee"
     },
     {
-      "id": 103,
-      "utcDate": "2026-06-12T20:00:00Z",
+      "id": 4460944,
+      "utcDate": "2026-06-14T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_C",
+      "homeTeam": {
+        "id": 11089,
+        "name": "Haiti",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm1mbp9cg49g0000000001aj7lhpa"
+      },
+      "awayTeam": {
+        "id": 10868,
+        "name": "Scotland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls3mbp9cg49g0000000001ep8418i"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：海地 vs 苏格兰）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460947,
+      "utcDate": "2026-06-14T04:00:00.000Z",
       "status": "SCHEDULED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
-      "matchday": 3,
-      "homeTeam": {"id": 13, "name": "Brazil", "crest": "https://crests.football-data.org/764.svg"},
-      "awayTeam": {"id": 15, "name": "South Korea", "crest": "https://crests.football-data.org/770.svg"},
+      "homeTeam": {
+        "id": 13832,
+        "name": "Australia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn684mbp9cg49g0000000001bku45ak"
+      },
+      "awayTeam": {
+        "id": 13337,
+        "name": "Turkey",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060681mbp9cg49g0000000001dfi00oc"
+      },
       "score": {
         "winner": null,
-        "fullTime": {"home": null, "away": null},
-        "halfTime": {"home": null, "away": null}
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
       },
-      "venue": "MetLife Stadium, New York/New Jersey",
-      "referee": "Szymon Marciniak (Poland)"
+      "venue": "小红书直播（世界杯小组赛：澳大利亚 vs 土耳其）",
+      "referee": "FIFA Referee"
     },
     {
-      "id": 104,
-      "utcDate": "2026-06-11T16:00:00Z",
-      "status": "FINISHED",
+      "id": 4460914,
+      "utcDate": "2026-06-14T17:00:00.000Z",
+      "status": "SCHEDULED",
       "stage": "GROUP_STAGE",
-      "group": "GROUP_A",
-      "matchday": 1,
-      "homeTeam": {"id": 2, "name": "Mexico", "crest": "https://crests.football-data.org/794.svg"},
-      "awayTeam": {"id": 3, "name": "Australia", "crest": "https://crests.football-data.org/779.svg"},
-      "score": {
-        "winner": "DRAW",
-        "fullTime": {"home": 1, "away": 1},
-        "halfTime": {"home": 0, "away": 1}
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 11746,
+        "name": "Germany",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6206bp9cg49g00000000018i9t2k4"
       },
-      "venue": "Estadio Akron, Guadalajara",
-      "referee": "Clement Turpin (France)"
+      "awayTeam": {
+        "id": 33203,
+        "name": "Curacao",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a2dbls0mbp9cg49g0000000001fkl4gpk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：德国 vs 库拉索）",
+      "referee": "FIFA Referee"
     },
     {
-      "id": 105,
-      "utcDate": "2026-06-11T19:30:00Z",
-      "status": "FINISHED",
+      "id": 4460917,
+      "utcDate": "2026-06-14T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 10870,
+        "name": "Netherlands",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr620mbp9cg49g000000000187iqc66"
+      },
+      "awayTeam": {
+        "id": 14529,
+        "name": "Japan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl623mbp9cg49g00000000019vaadk6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：荷兰 vs 日本）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460950,
+      "utcDate": "2026-06-14T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 11141,
+        "name": "Cote d'Ivoire",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm3mbp9cg49g0000000001ak3hvvs"
+      },
+      "awayTeam": {
+        "id": 11082,
+        "name": "Ecuador",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rsh5m0mbp9cg49g00000000019noghte"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：科特迪瓦 vs 厄瓜多尔）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460953,
+      "utcDate": "2026-06-15T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 10869,
+        "name": "Sweden",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls4mbp9cg49g000000000192mif4q"
+      },
+      "awayTeam": {
+        "id": 13613,
+        "name": "Tunisia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn682mbp9cg49g0000000001dcegkei"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：瑞典 vs 突尼斯）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460923,
+      "utcDate": "2026-06-15T16:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 14227,
+        "name": "Spain",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl620mbp9cg49g0000000001bu1d4t6"
+      },
+      "awayTeam": {
+        "id": 11083,
+        "name": "Cape Verde",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm0mbp9cg49g00000000018cqr4cs"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：西班牙 vs 佛得角）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460920,
+      "utcDate": "2026-06-15T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 10316,
+        "name": "Belgium",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m2mbp9cg49g0000000001c1l7mqk"
+      },
+      "awayTeam": {
+        "id": 13464,
+        "name": "Egypt",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn680mbp9cg49g0000000001foc2c58"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：比利时 vs 埃及）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460959,
+      "utcDate": "2026-06-15T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 10584,
+        "name": "Saudi Arabia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls1mbp9cg49g0000000001fn79d7s"
+      },
+      "awayTeam": {
+        "id": 13447,
+        "name": "Uruguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060683mbp9cg49g0000000001cbfg5qc"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：沙特阿拉伯 vs 乌拉圭）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460956,
+      "utcDate": "2026-06-16T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 14298,
+        "name": "Iran",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl621mbp9cg49g0000000001aqnqe4c"
+      },
+      "awayTeam": {
+        "id": 14400,
+        "name": "New Zealand",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl622mbp9cg49g0000000001asb5g0g"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：伊朗 vs 新西兰）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460926,
+      "utcDate": "2026-06-16T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 10234,
+        "name": "France",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m0mbp9cg49g0000000001f7gfnnk"
+      },
+      "awayTeam": {
+        "id": 13365,
+        "name": "Senegal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060682mbp9cg49g0000000001f1kmd8s"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：法国 vs 塞内加尔）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460967,
+      "utcDate": "2026-06-16T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 11288,
+        "name": "Iraq",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls2mbp9cg49g00000000019skssf6"
+      },
+      "awayTeam": {
+        "id": 13820,
+        "name": "Norway",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn683mbp9cg49g0000000001aof3qjc"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：伊拉克 vs 挪威）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460929,
+      "utcDate": "2026-06-17T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 13727,
+        "name": "Argentina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2d81c5e06bp9cg49g0000000001equu8p6"
+      },
+      "awayTeam": {
+        "id": 23383,
+        "name": "Algeria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl624mbp9cg49g0000000001av3clf2"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：阿根廷 vs 阿尔及利亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460970,
+      "utcDate": "2026-06-17T04:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 13226,
+        "name": "Austria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060680mbp9cg49g0000000001eh8v2kk"
+      },
+      "awayTeam": {
+        "id": 11267,
+        "name": "Jordan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls1mbp9cg49g0000000001blmud6u"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：奥地利 vs 约旦）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460932,
+      "utcDate": "2026-06-17T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 13152,
+        "name": "Portugal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6246bp9cg49g0000000001brvkrl6"
+      },
+      "awayTeam": {
+        "id": 11142,
+        "name": "DR Congo",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls0mbp9cg49g0000000001dpf121m"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：葡萄牙 vs 刚果民主共和国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460935,
+      "utcDate": "2026-06-17T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 11079,
+        "name": "England",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr624mbp9cg49g000000000185eomvo"
+      },
+      "awayTeam": {
+        "id": 11606,
+        "name": "Croatia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls4mbp9cg49g0000000001e6m3f0u"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：英格兰 vs 克罗地亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460976,
+      "utcDate": "2026-06-17T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 11017,
+        "name": "Ghana",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr623mbp9cg49g000000000190odh3i"
+      },
+      "awayTeam": {
+        "id": 12064,
+        "name": "Panama",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6236bp9cg49g0000000001d9j74sa"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：加纳 vs 巴拿马）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460973,
+      "utcDate": "2026-06-18T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 10582,
+        "name": "Uzbekistan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls0mbp9cg49g00000000018dminp4"
+      },
+      "awayTeam": {
+        "id": 10476,
+        "name": "Colombia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m3mbp9cg49g0000000001bhqjuse"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：乌兹别克斯坦 vs 哥伦比亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460939,
+      "utcDate": "2026-06-18T16:00:00.000Z",
+      "status": "SCHEDULED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
-      "matchday": 1,
-      "homeTeam": {"id": 1, "name": "United States", "crest": "https://crests.football-data.org/772.svg"},
-      "awayTeam": {"id": 4, "name": "Austria", "crest": "https://crests.football-data.org/776.svg"},
-      "score": {
-        "winner": "HOME_TEAM",
-        "fullTime": {"home": 3, "away": 0},
-        "halfTime": {"home": 1, "away": 0}
+      "homeTeam": {
+        "id": 10979,
+        "name": "Czechia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr622mbp9cg49g0000000001fqdocci"
       },
-      "venue": "Mercedes-Benz Stadium, Atlanta",
-      "referee": "Wilmar Roldan (Colombia)"
+      "awayTeam": {
+        "id": 10310,
+        "name": "South Africa",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m1mbp9cg49g0000000001asedgtu"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：捷克 vs 南非）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460942,
+      "utcDate": "2026-06-18T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 10871,
+        "name": "Switzerland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr621mbp9cg49g0000000001cgkju66"
+      },
+      "awayTeam": {
+        "id": 10478,
+        "name": "Bosnia and Herzegovina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m4mbp9cg49g0000000001d2alig4"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：瑞士 vs 波黑）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459825,
+      "utcDate": "2026-06-18T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 11138,
+        "name": "Canada",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm2mbp9cg49g0000000001b0fr8sk"
+      },
+      "awayTeam": {
+        "id": 11289,
+        "name": "Qatar",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls3mbp9cg49g0000000001853ef5a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：加拿大 vs 卡塔尔）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459821,
+      "utcDate": "2026-06-19T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_A",
+      "homeTeam": {
+        "id": 11764,
+        "name": "Mexico",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6226bp9cg49g0000000001d08931i"
+      },
+      "awayTeam": {
+        "id": 10586,
+        "name": "South Korea",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls2mbp9cg49g00000000019ua49fe"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：墨西哥 vs 韩国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459828,
+      "utcDate": "2026-06-19T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_D",
+      "homeTeam": {
+        "id": 13611,
+        "name": "United States",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn681mbp9cg49g0000000001ag8l4qo"
+      },
+      "awayTeam": {
+        "id": 13832,
+        "name": "Australia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn684mbp9cg49g0000000001bku45ak"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：美国 vs 澳大利亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460945,
+      "utcDate": "2026-06-19T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_C",
+      "homeTeam": {
+        "id": 10868,
+        "name": "Scotland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls3mbp9cg49g0000000001ep8418i"
+      },
+      "awayTeam": {
+        "id": 11763,
+        "name": "Morocco",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6216bp9cg49g0000000001evf29li"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：苏格兰 vs 摩洛哥）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460911,
+      "utcDate": "2026-06-20T00:30:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_C",
+      "homeTeam": {
+        "id": 10477,
+        "name": "Brazil",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2dbsqle06bp9cg49g0000000001bnd1fnc"
+      },
+      "awayTeam": {
+        "id": 11089,
+        "name": "Haiti",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm1mbp9cg49g0000000001aj7lhpa"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：巴西 vs 海地）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460948,
+      "utcDate": "2026-06-20T03:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_D",
+      "homeTeam": {
+        "id": 13337,
+        "name": "Turkey",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060681mbp9cg49g0000000001dfi00oc"
+      },
+      "awayTeam": {
+        "id": 13449,
+        "name": "Paraguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060684mbp9cg49g00000000018hr23c0"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：土耳其 vs 巴拉圭）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460918,
+      "utcDate": "2026-06-20T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 10870,
+        "name": "Netherlands",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr620mbp9cg49g000000000187iqc66"
+      },
+      "awayTeam": {
+        "id": 10869,
+        "name": "Sweden",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls4mbp9cg49g000000000192mif4q"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：荷兰 vs 瑞典）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460915,
+      "utcDate": "2026-06-20T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 11746,
+        "name": "Germany",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6206bp9cg49g00000000018i9t2k4"
+      },
+      "awayTeam": {
+        "id": 11141,
+        "name": "Cote d'Ivoire",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm3mbp9cg49g0000000001ak3hvvs"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：德国 vs 科特迪瓦）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460951,
+      "utcDate": "2026-06-21T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 11082,
+        "name": "Ecuador",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rsh5m0mbp9cg49g00000000019noghte"
+      },
+      "awayTeam": {
+        "id": 33203,
+        "name": "Curacao",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a2dbls0mbp9cg49g0000000001fkl4gpk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：厄瓜多尔 vs 库拉索）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460954,
+      "utcDate": "2026-06-21T04:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 13613,
+        "name": "Tunisia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn682mbp9cg49g0000000001dcegkei"
+      },
+      "awayTeam": {
+        "id": 14529,
+        "name": "Japan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl623mbp9cg49g00000000019vaadk6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：突尼斯 vs 日本）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460924,
+      "utcDate": "2026-06-21T16:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 14227,
+        "name": "Spain",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl620mbp9cg49g0000000001bu1d4t6"
+      },
+      "awayTeam": {
+        "id": 10584,
+        "name": "Saudi Arabia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls1mbp9cg49g0000000001fn79d7s"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：西班牙 vs 沙特阿拉伯）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460921,
+      "utcDate": "2026-06-21T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 10316,
+        "name": "Belgium",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m2mbp9cg49g0000000001c1l7mqk"
+      },
+      "awayTeam": {
+        "id": 14298,
+        "name": "Iran",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl621mbp9cg49g0000000001aqnqe4c"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：比利时 vs 伊朗）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460965,
+      "utcDate": "2026-06-21T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 13447,
+        "name": "Uruguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060683mbp9cg49g0000000001cbfg5qc"
+      },
+      "awayTeam": {
+        "id": 11083,
+        "name": "Cape Verde",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm0mbp9cg49g00000000018cqr4cs"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：乌拉圭 vs 佛得角）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460957,
+      "utcDate": "2026-06-22T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 14400,
+        "name": "New Zealand",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl622mbp9cg49g0000000001asb5g0g"
+      },
+      "awayTeam": {
+        "id": 13464,
+        "name": "Egypt",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn680mbp9cg49g0000000001foc2c58"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：新西兰 vs 埃及）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460930,
+      "utcDate": "2026-06-22T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 13727,
+        "name": "Argentina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2d81c5e06bp9cg49g0000000001equu8p6"
+      },
+      "awayTeam": {
+        "id": 13226,
+        "name": "Austria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060680mbp9cg49g0000000001eh8v2kk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：阿根廷 vs 奥地利）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460927,
+      "utcDate": "2026-06-22T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 10234,
+        "name": "France",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m0mbp9cg49g0000000001f7gfnnk"
+      },
+      "awayTeam": {
+        "id": 11288,
+        "name": "Iraq",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls2mbp9cg49g00000000019skssf6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：法国 vs 伊拉克）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460968,
+      "utcDate": "2026-06-23T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 13820,
+        "name": "Norway",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn683mbp9cg49g0000000001aof3qjc"
+      },
+      "awayTeam": {
+        "id": 13365,
+        "name": "Senegal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060682mbp9cg49g0000000001f1kmd8s"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：挪威 vs 塞内加尔）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460971,
+      "utcDate": "2026-06-23T03:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 11267,
+        "name": "Jordan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls1mbp9cg49g0000000001blmud6u"
+      },
+      "awayTeam": {
+        "id": 23383,
+        "name": "Algeria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl624mbp9cg49g0000000001av3clf2"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：约旦 vs 阿尔及利亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460933,
+      "utcDate": "2026-06-23T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 13152,
+        "name": "Portugal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6246bp9cg49g0000000001brvkrl6"
+      },
+      "awayTeam": {
+        "id": 10582,
+        "name": "Uzbekistan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls0mbp9cg49g00000000018dminp4"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：葡萄牙 vs 乌兹别克斯坦）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460936,
+      "utcDate": "2026-06-23T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 11079,
+        "name": "England",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr624mbp9cg49g000000000185eomvo"
+      },
+      "awayTeam": {
+        "id": 11017,
+        "name": "Ghana",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr623mbp9cg49g000000000190odh3i"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：英格兰 vs 加纳）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460977,
+      "utcDate": "2026-06-23T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 12064,
+        "name": "Panama",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6236bp9cg49g0000000001d9j74sa"
+      },
+      "awayTeam": {
+        "id": 11606,
+        "name": "Croatia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls4mbp9cg49g0000000001e6m3f0u"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：巴拿马 vs 克罗地亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460974,
+      "utcDate": "2026-06-24T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 10476,
+        "name": "Colombia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m3mbp9cg49g0000000001bhqjuse"
+      },
+      "awayTeam": {
+        "id": 11142,
+        "name": "DR Congo",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls0mbp9cg49g0000000001dpf121m"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：哥伦比亚 vs 刚果民主共和国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459826,
+      "utcDate": "2026-06-24T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 10871,
+        "name": "Switzerland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr621mbp9cg49g0000000001cgkju66"
+      },
+      "awayTeam": {
+        "id": 11138,
+        "name": "Canada",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm2mbp9cg49g0000000001b0fr8sk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：瑞士 vs 加拿大）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460943,
+      "utcDate": "2026-06-24T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "homeTeam": {
+        "id": 10478,
+        "name": "Bosnia and Herzegovina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m4mbp9cg49g0000000001d2alig4"
+      },
+      "awayTeam": {
+        "id": 11289,
+        "name": "Qatar",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls3mbp9cg49g0000000001853ef5a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：波黑 vs 卡塔尔）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460912,
+      "utcDate": "2026-06-24T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_C",
+      "homeTeam": {
+        "id": 10868,
+        "name": "Scotland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls3mbp9cg49g0000000001ep8418i"
+      },
+      "awayTeam": {
+        "id": 10477,
+        "name": "Brazil",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2dbsqle06bp9cg49g0000000001bnd1fnc"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：苏格兰 vs 巴西）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460946,
+      "utcDate": "2026-06-24T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_C",
+      "homeTeam": {
+        "id": 11763,
+        "name": "Morocco",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6216bp9cg49g0000000001evf29li"
+      },
+      "awayTeam": {
+        "id": 11089,
+        "name": "Haiti",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm1mbp9cg49g0000000001aj7lhpa"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：摩洛哥 vs 海地）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459823,
+      "utcDate": "2026-06-25T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_A",
+      "homeTeam": {
+        "id": 10979,
+        "name": "Czechia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr622mbp9cg49g0000000001fqdocci"
+      },
+      "awayTeam": {
+        "id": 11764,
+        "name": "Mexico",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6226bp9cg49g0000000001d08931i"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：捷克 vs 墨西哥）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460940,
+      "utcDate": "2026-06-25T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_A",
+      "homeTeam": {
+        "id": 10310,
+        "name": "South Africa",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m1mbp9cg49g0000000001asedgtu"
+      },
+      "awayTeam": {
+        "id": 10586,
+        "name": "South Korea",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls2mbp9cg49g00000000019ua49fe"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：南非 vs 韩国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460916,
+      "utcDate": "2026-06-25T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 11082,
+        "name": "Ecuador",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rsh5m0mbp9cg49g00000000019noghte"
+      },
+      "awayTeam": {
+        "id": 11746,
+        "name": "Germany",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6206bp9cg49g00000000018i9t2k4"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：厄瓜多尔 vs 德国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460952,
+      "utcDate": "2026-06-25T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "homeTeam": {
+        "id": 33203,
+        "name": "Curacao",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a2dbls0mbp9cg49g0000000001fkl4gpk"
+      },
+      "awayTeam": {
+        "id": 11141,
+        "name": "Cote d'Ivoire",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm3mbp9cg49g0000000001ak3hvvs"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：库拉索 vs 科特迪瓦）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460919,
+      "utcDate": "2026-06-25T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 13613,
+        "name": "Tunisia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn682mbp9cg49g0000000001dcegkei"
+      },
+      "awayTeam": {
+        "id": 10870,
+        "name": "Netherlands",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr620mbp9cg49g000000000187iqc66"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：突尼斯 vs 荷兰）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460955,
+      "utcDate": "2026-06-25T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_F",
+      "homeTeam": {
+        "id": 14529,
+        "name": "Japan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl623mbp9cg49g00000000019vaadk6"
+      },
+      "awayTeam": {
+        "id": 10869,
+        "name": "Sweden",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls4mbp9cg49g000000000192mif4q"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：日本 vs 瑞典）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459829,
+      "utcDate": "2026-06-26T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_D",
+      "homeTeam": {
+        "id": 13337,
+        "name": "Turkey",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060681mbp9cg49g0000000001dfi00oc"
+      },
+      "awayTeam": {
+        "id": 13611,
+        "name": "United States",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn681mbp9cg49g0000000001ag8l4qo"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：土耳其 vs 美国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460949,
+      "utcDate": "2026-06-26T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_D",
+      "homeTeam": {
+        "id": 13449,
+        "name": "Paraguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060684mbp9cg49g00000000018hr23c0"
+      },
+      "awayTeam": {
+        "id": 13832,
+        "name": "Australia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn684mbp9cg49g0000000001bku45ak"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：巴拉圭 vs 澳大利亚）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460928,
+      "utcDate": "2026-06-26T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 13820,
+        "name": "Norway",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn683mbp9cg49g0000000001aof3qjc"
+      },
+      "awayTeam": {
+        "id": 10234,
+        "name": "France",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m0mbp9cg49g0000000001f7gfnnk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：挪威 vs 法国）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460969,
+      "utcDate": "2026-06-26T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_I",
+      "homeTeam": {
+        "id": 13365,
+        "name": "Senegal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060682mbp9cg49g0000000001f1kmd8s"
+      },
+      "awayTeam": {
+        "id": 11288,
+        "name": "Iraq",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls2mbp9cg49g00000000019skssf6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：塞内加尔 vs 伊拉克）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460925,
+      "utcDate": "2026-06-27T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 13447,
+        "name": "Uruguay",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060683mbp9cg49g0000000001cbfg5qc"
+      },
+      "awayTeam": {
+        "id": 14227,
+        "name": "Spain",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl620mbp9cg49g0000000001bu1d4t6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：乌拉圭 vs 西班牙）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460966,
+      "utcDate": "2026-06-27T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_H",
+      "homeTeam": {
+        "id": 11083,
+        "name": "Cape Verde",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rshlm0mbp9cg49g00000000018cqr4cs"
+      },
+      "awayTeam": {
+        "id": 10584,
+        "name": "Saudi Arabia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls1mbp9cg49g0000000001fn79d7s"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：佛得角 vs 沙特阿拉伯）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460922,
+      "utcDate": "2026-06-27T03:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 14400,
+        "name": "New Zealand",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl622mbp9cg49g0000000001asb5g0g"
+      },
+      "awayTeam": {
+        "id": 10316,
+        "name": "Belgium",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m2mbp9cg49g0000000001c1l7mqk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：新西兰 vs 比利时）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460958,
+      "utcDate": "2026-06-27T03:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_G",
+      "homeTeam": {
+        "id": 13464,
+        "name": "Egypt",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn680mbp9cg49g0000000001foc2c58"
+      },
+      "awayTeam": {
+        "id": 14298,
+        "name": "Iran",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl621mbp9cg49g0000000001aqnqe4c"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：埃及 vs 伊朗）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460937,
+      "utcDate": "2026-06-27T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 12064,
+        "name": "Panama",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6236bp9cg49g0000000001d9j74sa"
+      },
+      "awayTeam": {
+        "id": 11079,
+        "name": "England",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr624mbp9cg49g000000000185eomvo"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：巴拿马 vs 英格兰）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460978,
+      "utcDate": "2026-06-27T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_L",
+      "homeTeam": {
+        "id": 11606,
+        "name": "Croatia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls4mbp9cg49g0000000001e6m3f0u"
+      },
+      "awayTeam": {
+        "id": 11017,
+        "name": "Ghana",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29rfr623mbp9cg49g000000000190odh3i"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：克罗地亚 vs 加纳）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460934,
+      "utcDate": "2026-06-27T23:30:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 10476,
+        "name": "Colombia",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29qna5m3mbp9cg49g0000000001bhqjuse"
+      },
+      "awayTeam": {
+        "id": 13152,
+        "name": "Portugal",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6246bp9cg49g0000000001brvkrl6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：哥伦比亚 vs 葡萄牙）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460975,
+      "utcDate": "2026-06-27T23:30:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_K",
+      "homeTeam": {
+        "id": 11142,
+        "name": "DR Congo",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls0mbp9cg49g0000000001dpf121m"
+      },
+      "awayTeam": {
+        "id": 10582,
+        "name": "Uzbekistan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47ls0mbp9cg49g00000000018dminp4"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：刚果民主共和国 vs 乌兹别克斯坦）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460931,
+      "utcDate": "2026-06-28T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 11267,
+        "name": "Jordan",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29tr4ls1mbp9cg49g0000000001blmud6u"
+      },
+      "awayTeam": {
+        "id": 13727,
+        "name": "Argentina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2d81c5e06bp9cg49g0000000001equu8p6"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：约旦 vs 阿根廷）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4460972,
+      "utcDate": "2026-06-28T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_J",
+      "homeTeam": {
+        "id": 23383,
+        "name": "Algeria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0sl624mbp9cg49g0000000001av3clf2"
+      },
+      "awayTeam": {
+        "id": 13226,
+        "name": "Austria",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060680mbp9cg49g0000000001eh8v2kk"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书直播（世界杯小组赛：阿尔及利亚 vs 奥地利）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459717,
+      "utcDate": "2026-06-28T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59324,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59325,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（6月29日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459720,
+      "utcDate": "2026-06-29T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59328,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59337,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（6月30日1:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459718,
+      "utcDate": "2026-06-29T20:30:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59338,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91455,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（6月30日4:30）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459719,
+      "utcDate": "2026-06-30T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59334,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59327,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（6月30日9:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459722,
+      "utcDate": "2026-06-30T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59333,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91463,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月1日1:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459721,
+      "utcDate": "2026-06-30T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91456,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91457,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月1日5:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459723,
+      "utcDate": "2026-07-01T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59326,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91464,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月1日9:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459724,
+      "utcDate": "2026-07-01T16:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91465,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91466,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月2日0:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459726,
+      "utcDate": "2026-07-01T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 77358,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91462,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月2日4:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459725,
+      "utcDate": "2026-07-02T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59336,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91461,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月2日8:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459728,
+      "utcDate": "2026-07-02T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 69743,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91460,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月3日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459727,
+      "utcDate": "2026-07-02T23:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91458,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91459,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月3日7:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459729,
+      "utcDate": "2026-07-03T03:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59330,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91468,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月3日11:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459797,
+      "utcDate": "2026-07-03T18:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59332,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 41560,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月4日2:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459731,
+      "utcDate": "2026-07-03T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91467,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 69744,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月4日6:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459732,
+      "utcDate": "2026-07-04T01:30:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91469,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91470,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/16决赛（7月4日9:30）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459801,
+      "utcDate": "2026-07-04T17:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91518,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91520,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月5日1:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459800,
+      "utcDate": "2026-07-04T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91519,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91522,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月5日5:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459802,
+      "utcDate": "2026-07-05T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91521,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91523,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月6日4:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459803,
+      "utcDate": "2026-07-06T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91524,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91525,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月6日8:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459804,
+      "utcDate": "2026-07-06T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91528,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91529,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月7日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459805,
+      "utcDate": "2026-07-07T00:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91526,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91527,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月7日8:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459806,
+      "utcDate": "2026-07-07T16:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91531,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91533,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月8日0:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459807,
+      "utcDate": "2026-07-07T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 91530,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 91532,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/8决赛（7月8日4:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459808,
+      "utcDate": "2026-07-09T20:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59345,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59343,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/4决赛（7月10日4:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459809,
+      "utcDate": "2026-07-10T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59341,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59340,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/4决赛（7月11日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459810,
+      "utcDate": "2026-07-11T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59344,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59342,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/4决赛（7月12日5:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459811,
+      "utcDate": "2026-07-12T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59347,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59346,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 1/4决赛（7月12日9:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459812,
+      "utcDate": "2026-07-14T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59349,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59348,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 半决赛（7月15日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459813,
+      "utcDate": "2026-07-15T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59351,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59350,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 半决赛（7月16日3:00）",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459814,
+      "utcDate": "2026-07-18T21:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 61087,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 61088,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "小红书世界杯直播 三四名决赛",
+      "referee": "FIFA Referee"
+    },
+    {
+      "id": 4459815,
+      "utcDate": "2026-07-19T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stage": "KNOCKOUT_STAGE",
+      "group": null,
+      "homeTeam": {
+        "id": 59352,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "awayTeam": {
+        "id": 59353,
+        "name": "待定",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320qohpc6mq06agg13g8g00000000016t9dr7a"
+      },
+      "score": {
+        "winner": null,
+        "fullTime": {
+          "home": 0,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "venue": "2026年美加墨世界杯决赛",
+      "referee": "FIFA Referee"
     }
   ],
   "scorers": [
     {
-      "player": {"id": 1201, "name": "Kylian Mbappé", "nationality": "France", "position": "Offence"},
-      "team": {"id": 9, "name": "France", "crest": "https://crests.football-data.org/773.svg"},
-      "goals": 4, "assists": 1, "penalties": 1
+      "player": {
+        "id": 1201,
+        "name": "Kylian Mbappé",
+        "nationality": "France",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 11139,
+        "name": "France",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0qna5o1bp9cg49g0000000001fmdchju"
+      },
+      "goals": 4,
+      "assists": 1,
+      "penalties": 1
     },
     {
-      "player": {"id": 1202, "name": "Lionel Messi", "nationality": "Argentina", "position": "Offence"},
-      "team": {"id": 5, "name": "Argentina", "crest": "https://crests.football-data.org/762.svg"},
-      "goals": 3, "assists": 2, "penalties": 1
+      "player": {
+        "id": 1202,
+        "name": "Lionel Messi",
+        "nationality": "Argentina",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 10479,
+        "name": "Argentina",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29r47lr2mbp9cg49g00000000014qia7t3"
+      },
+      "goals": 3,
+      "assists": 2,
+      "penalties": 1
     },
     {
-      "player": {"id": 1203, "name": "Harry Kane", "nationality": "England", "position": "Offence"},
-      "team": {"id": 17, "name": "England", "crest": "https://crests.football-data.org/770.svg"},
-      "goals": 3, "assists": 0, "penalties": 0
+      "player": {
+        "id": 1203,
+        "name": "Harry Kane",
+        "nationality": "England",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 11140,
+        "name": "England",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hna5p1bp9cg49g0000000001hgdq7t3"
+      },
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0
     },
     {
-      "player": {"id": 1204, "name": "Christian Pulisic", "nationality": "United States", "position": "Midfield"},
-      "team": {"id": 1, "name": "United States", "crest": "https://crests.football-data.org/772.svg"},
-      "goals": 2, "assists": 2, "penalties": 0
+      "player": {
+        "id": 1204,
+        "name": "Christian Pulisic",
+        "nationality": "United States",
+        "position": "Midfield"
+      },
+      "team": {
+        "id": 13611,
+        "name": "United States",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0hn681mbp9cg49g0000000001ag8l4qo"
+      },
+      "goals": 2,
+      "assists": 2,
+      "penalties": 0
     },
     {
-      "player": {"id": 1205, "name": "Vinicius Junior", "nationality": "Brazil", "position": "Offence"},
-      "team": {"id": 13, "name": "Brazil", "crest": "https://crests.football-data.org/764.svg"},
-      "goals": 2, "assists": 1, "penalties": 0
+      "player": {
+        "id": 1205,
+        "name": "Vinícius Júnior",
+        "nationality": "Brazil",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 11141,
+        "name": "Brazil",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a060682mbp9cg49g0000000001b0frodg"
+      },
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0
     },
     {
-      "player": {"id": 1206, "name": "Alvaro Morata", "nationality": "Spain", "position": "Offence"},
-      "team": {"id": 21, "name": "Spain", "crest": "https://crests.football-data.org/760.svg"},
-      "goals": 2, "assists": 0, "penalties": 0
+      "player": {
+        "id": 1206,
+        "name": "Álvaro Morata",
+        "nationality": "Spain",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 11142,
+        "name": "Spain",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e2a0qna5r1bp9cg49g0000000001bgikjud"
+      },
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0
     },
     {
-      "player": {"id": 1207, "name": "Robert Lewandowski", "nationality": "Poland", "position": "Offence"},
-      "team": {"id": 6, "name": "Poland", "crest": "https://crests.football-data.org/795.svg"},
-      "goals": 1, "assists": 1, "penalties": 0
+      "player": {
+        "id": 1207,
+        "name": "Robert Lewandowski",
+        "nationality": "Poland",
+        "position": "Offence"
+      },
+      "team": {
+        "id": 11143,
+        "name": "Poland",
+        "crest": "https://growth-img.xhscdn.com/ditto/104100n0320e29u6d6256bp9cg49g0000000001fqdojgi"
+      },
+      "goals": 1,
+      "assists": 1,
+      "penalties": 0
     }
   ],
   "news": {
     "en": [
       {
-        "title": "FIFA World Cup 2026 Kicks Off: Hosts USA and Mexico Play Opening Matches",
-        "description": "The FIFA World Cup 2026 has officially started with opening matches in Atlanta and Mexico City. USA cruised to a 3-0 victory against Austria, while Mexico drew 1-1 with Australia.",
-        "content": "The largest World Cup in history featuring 48 teams kicked off in spectacular fashion. Co-hosts USA delivered a convincing 3-0 win over Austria in Atlanta, spearheaded by captain Christian Pulisic. Meanwhile, Mexico was held to a 1-1 draw by a resilient Australian side at the historic Estadio Azteca.",
-        "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026",
-        "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop",
-        "publishedAt": "2026-06-12T02:00:00Z",
-        "source": {"name": "FIFA Official", "url": "https://www.fifa.com"}
+        "title": "Is Brazil Still the Favorite to Win the FIFA World Cup 2026?",
+        "description": "With a stacked squad featuring Vinicius Jr and Rodrygo, Brazil enters the tournament with high expectations, but challenges await.",
+        "content": "With a stacked squad featuring Vinicius Jr and Rodrygo, Brazil enters the tournament with high expectations, but challenges await. Experts analyze their squad depth and potential route to the finals.",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321be51d2nu069kdqohqg0000000004qockj40.jpg",
+        "publishedAt": "2026-06-11T19:00:00.000Z",
+        "source": {
+          "name": "Xiaohongshu Sports",
+          "url": "https://www.xiaohongshu.com"
+        }
       },
       {
-        "title": "Mbappe Brace Leads France to 2-1 Win Over Resilient Japan",
-        "description": "Kylian Mbappe scored twice as France secured a hard-fought 2-1 victory over Japan to seal their spot in the Round of 32 in the World Cup Group C clash.",
-        "content": "France encountered stiff resistance from Japan in Mexico City. Mbappe opened the scoring early, but Japan equalized in the second half. A late penalty from Mbappe sealed the win, raising his World Cup goal tally to 16, tying the tournament record.",
-        "url": "https://www.bbc.com/sport/football",
-        "image": "https://images.unsplash.com/photo-1540747737956-37872f767ec0?q=80&w=600&auto=format&fit=crop",
-        "publishedAt": "2026-06-12T03:30:00Z",
-        "source": {"name": "BBC Sport", "url": "https://www.bbc.com"}
+        "title": "USA Dominates Paraguay 4-1 with Balogun Scoring Double",
+        "description": "Hosts United States started their campaign with a statements victory in SoFi Stadium, powered by Balogun's braces.",
+        "content": "Hosts United States started their campaign with a statements victory in SoFi Stadium, powered by Balogun's braces. Christian Pulisic also put up an outstanding performance to lead the team.",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321bdvn297a069kdqohqg0000000004tadj6u2.jpg",
+        "publishedAt": "2026-06-12T01:00:00.000Z",
+        "source": {
+          "name": "Xiaohongshu Sports",
+          "url": "https://www.xiaohongshu.com"
+        }
       },
       {
-        "title": "Argentina Cruises to Knockouts; Messi Focused on Round of 32",
-        "description": "Argentina secured the top spot in Group B with three consecutive wins. Lionel Messi emphasizes that there is no margin for error in the knockout phase.",
-        "content": "A 2-0 win over Saudi Arabia completed a perfect group stage for Argentina. Lionel Messi, who has 3 goals and 2 assists, said in a post-match press conference: 'We did our job. Now, the real competition begins. Every game is a final.'",
-        "url": "https://www.espn.com/soccer",
-        "image": "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600&auto=format&fit=crop",
-        "publishedAt": "2026-06-11T22:00:00Z",
-        "source": {"name": "ESPN FC", "url": "https://www.espn.com"}
+        "title": "Canada and Bosnia-Herzegovina Draw 1-1 in Hard-Fought Match",
+        "description": "Canada drew 1-1 with Bosnia in Vancouver. Alphonso Davies scored the equalizer to salvage a point for the co-hosts.",
+        "content": "Canada drew 1-1 with Bosnia in Vancouver. Alphonso Davies scored the equalizer to salvage a point for the co-hosts in front of a sold-out home crowd.",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321b40aqena06hd82u0270000000000foah27m.jpg",
+        "publishedAt": "2026-06-11T19:00:00.000Z",
+        "source": {
+          "name": "Xiaohongshu Sports",
+          "url": "https://www.xiaohongshu.com"
+        }
+      },
+      {
+        "title": "FIFA World Cup 26 Opening Ceremony Spectacular Highlights",
+        "description": "The opening ceremony in Mexico City featured vibrant performances celebrating football unity in North America.",
+        "content": "The opening ceremony in Mexico City featured vibrant performances celebrating football unity in North America. Artists from USA, Mexico, and Canada wowed the crowd before kickoff.",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321beh2sgna069kdqohqg0000000004q74vqp6.jpg",
+        "publishedAt": "2026-06-11T17:25:00.000Z",
+        "source": {
+          "name": "Xiaohongshu Sports",
+          "url": "https://www.xiaohongshu.com"
+        }
+      }
+    ],
+    "zh-CN": [
+      {
+        "title": "巴西还是2026年美加墨世界杯的最大夺冠热门吗？",
+        "description": "拥有维尼修斯和罗德里戈的桑巴军团，带着极高的期望进入本届杯赛，但面临的挑战也不容小觑。",
+        "content": "拥有维尼修斯和罗德里戈的桑巴军团，带着极高的期望进入本届杯赛，但面临的挑战也不容小觑。各路足坛名宿深度分析了他们的阵容配置和潜在的晋级之路。",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321be51d2nu069kdqohqg0000000004qockj40.jpg",
+        "publishedAt": "2026-06-11T19:00:00.000Z",
+        "source": {
+          "name": "小红书体育",
+          "url": "https://www.xiaohongshu.com"
+        }
+      },
+      {
+        "title": "美国 4-1 大胜巴拉圭开门红，巴洛贡梅开二度力拔头筹",
+        "description": "东道主美国队在SoFi体育场以一场大胜开启征程，巴洛贡的两粒进球帮助球队锁定胜局。",
+        "content": "东道主美国队在SoFi体育场以一场大胜开启征程，巴洛贡的两粒进球帮助球队锁定胜局。队长普利西奇同样表现卓越，带领球队打出华丽进攻。",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321bdvn297a069kdqohqg0000000004tadj6u2.jpg",
+        "publishedAt": "2026-06-12T01:00:00.000Z",
+        "source": {
+          "name": "小红书体育",
+          "url": "https://www.xiaohongshu.com"
+        }
+      },
+      {
+        "title": "加拿大 1-1 战平波黑握手言和，阿方索·戴维斯建功扳平",
+        "description": "加拿大在温哥华主场1-1战平波黑。阿方索·戴维斯打入关键进球，帮助东道主在主场观众面前抢下一分。",
+        "content": "加拿大在温哥华主场1-1战平波黑。阿方索·戴维斯打入关键进球，帮助东道主在主场观众面前抢下一分，也保持了小组赛出线的主动权。",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321b40aqena06hd82u0270000000000foah27m.jpg",
+        "publishedAt": "2026-06-11T19:00:00.000Z",
+        "source": {
+          "name": "小红书体育",
+          "url": "https://www.xiaohongshu.com"
+        }
+      },
+      {
+        "title": "2026年世界杯开幕式精彩集锦，美加墨三国文化完美交融",
+        "description": "在墨西哥城阿兹特克球场举行的开幕式，用充满活力的表演庆祝了北美大陆的足球大团结。",
+        "content": "在墨西哥城阿兹特克球场举行的开幕式，用充满活力的表演庆祝了北美大陆的足球大团结。来自三国的著名艺术家联袂登台，奉献了精彩演出。",
+        "url": "https://www.xiaohongshu.com/worldcup26",
+        "image": "https://fe-platform.xhscdn.com/platform/104101l0321beh2sgna069kdqohqg0000000004q74vqp6.jpg",
+        "publishedAt": "2026-06-11T17:25:00.000Z",
+        "source": {
+          "name": "小红书体育",
+          "url": "https://www.xiaohongshu.com"
+        }
       }
     ]
-  }
+  },
+  "banners": [
+    {
+      "id": "6a2421be000000002201a379",
+      "cover": "https://fe-platform.xhscdn.com/platform/104101l0321be51d2nu069kdqohqg0000000004qockj40.jpg",
+      "title": {
+        "zh-CN": "巴西还是夺冠热门吗",
+        "en": "Is Brazil still the favorite to win?"
+      },
+      "url": "https://www.xiaohongshu.com/worldcup26"
+    },
+    {
+      "id": "6a2ccb2f0000000007024f55",
+      "cover": "https://fe-platform.xhscdn.com/platform/104101l0321bdvn297a069kdqohqg0000000004tadj6u2.jpg",
+      "title": {
+        "zh-CN": "美国4-1巴拉圭，巴洛贡梅开二度",
+        "en": "USA 4-1 Paraguay: Balogun scores brace"
+      },
+      "url": "https://www.xiaohongshu.com/worldcup26"
+    },
+    {
+      "id": "6a2c78cd0000000006022c14",
+      "cover": "https://fe-platform.xhscdn.com/platform/104101l0321b40aqena06hd82u0270000000000foah27m.jpg",
+      "title": {
+        "zh-CN": "加拿大1-1波黑，双方握手言和",
+        "en": "Canada 1-1 Bosnia-Herzegovina: Draw"
+      },
+      "url": "https://www.xiaohongshu.com/worldcup26"
+    },
+    {
+      "id": "6a2c9d75000000000803ee7a",
+      "cover": "https://fe-platform.xhscdn.com/platform/104101l0321beh2sgna069kdqohqg0000000004q74vqp6.jpg",
+      "title": {
+        "zh-CN": "美国之夏开幕式表演集锦",
+        "en": "USA Summer Opening Ceremony Highlights"
+      },
+      "url": "https://www.xiaohongshu.com/worldcup26"
+    },
+    {
+      "id": "6a23d0eb0000000021008159",
+      "cover": "https://fe-platform.xhscdn.com/platform/104101l03219c0stmnk06k0a0d0jpk0000000007fr5pdk.png",
+      "title": {
+        "zh-CN": "4分钟巡礼世界杯16座球场",
+        "en": "4-Minute Tour of 16 World Cup Stadiums"
+      },
+      "url": "https://www.xiaohongshu.com/worldcup26"
+    }
+  ]
 }
