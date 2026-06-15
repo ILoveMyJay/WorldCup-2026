@@ -1,5 +1,22 @@
 /* Cloudflare Pages Function — /api/news
-   Proxies requests to GNews.io with server-side API key */
+   Proxies requests to GNews.io in English and translates dynamically if lang=zh */
+
+async function translateText(text, targetLang = 'zh-CN') {
+  if (!text) return '';
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+    const resp = await fetch(url);
+    if (!resp.ok) return text;
+    const data = await resp.json();
+    if (data && data[0]) {
+      return data[0].map(x => x[0]).join('');
+    }
+    return text;
+  } catch (e) {
+    console.warn('Translation failed, returning original text:', e);
+    return text;
+  }
+}
 
 export async function onRequest(context) {
   // Support both single key (GNEWS_API_KEY) and multiple comma-separated keys (GNEWS_API_KEYS)
@@ -17,26 +34,21 @@ export async function onRequest(context) {
   const urlObj = new URL(context.request.url);
   const langParam = urlObj.searchParams.get('lang') || 'en';
   const isZh = langParam.startsWith('zh');
-  const lang = isZh ? 'zh' : 'en';
 
-  const queryText = isZh
-    ? '"2026年世界杯" OR "2026世界杯" OR "美加墨世界杯" OR "FIFA世界杯"'
-    : '"World Cup 2026" OR "FIFA World Cup"';
-
-  const query = encodeURIComponent(queryText);
+  // We always fetch English news from GNews as it has the richest and freshest dataset
+  const query = encodeURIComponent('"World Cup 2026" OR "FIFA World Cup"');
   let lastError = null;
 
-  // Try each API key in sequence until one succeeds
   for (const apiKey of apiKeys) {
     try {
-      const url = `https://gnews.io/api/v4/search?q=${query}&lang=${lang}&max=10&apikey=${apiKey}`;
+      const url = `https://gnews.io/api/v4/search?q=${query}&lang=en&max=10&apikey=${apiKey}`;
       const resp = await fetch(url);
 
       if (resp.ok) {
         const data = await resp.json();
-        
-        // Normalize article structure for frontend consistency
-        const articles = (data.articles || []).map(art => ({
+        const rawArticles = (data.articles || []);
+
+        let articles = rawArticles.map(art => ({
           title: art.title,
           description: art.description,
           content: art.content,
@@ -49,6 +61,27 @@ export async function onRequest(context) {
           }
         }));
 
+        // Dynamically translate to Chinese if requested
+        if (isZh) {
+          articles = await Promise.all(
+            articles.map(async (art) => {
+              const [tTitle, tDesc] = await Promise.all([
+                translateText(art.title, 'zh-CN'),
+                translateText(art.description, 'zh-CN')
+              ]);
+              return {
+                ...art,
+                title: tTitle,
+                description: tDesc,
+                source: {
+                  name: `小红书体育 · 编译`,
+                  url: art.source.url
+                }
+              };
+            })
+          );
+        }
+
         return new Response(JSON.stringify({ articles }), {
           headers: {
             'Content-Type': 'application/json',
@@ -57,7 +90,6 @@ export async function onRequest(context) {
         });
       }
 
-      // If we got a non-200 response (like 403 quota exceeded or 429 rate limit), log and try next key
       const errText = await resp.text();
       lastError = `API response status ${resp.status}: ${errText}`;
       console.warn(`GNews API Key [${apiKey.slice(0, 5)}...] failed. Error: ${lastError}`);
@@ -68,7 +100,6 @@ export async function onRequest(context) {
     }
   }
 
-  // If all keys fail, return the last error details
   return Response.json(
     { error: 'All configured GNews API keys exhausted or failed', detail: lastError },
     { status: 502 }
