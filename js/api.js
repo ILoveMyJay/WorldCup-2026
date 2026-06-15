@@ -24,7 +24,7 @@ const ApiService = {
     if (cached) return cached;
 
     try {
-      const res = await fetch('data/fallback-data.json');
+      const res = await fetch('data/fallback-data.json?v=7');
       const data = await res.json();
       Utils.cache.set('fallback_data', data, 3600);
       return data;
@@ -139,7 +139,15 @@ const ApiService = {
 
   // 5. News
   async getNews(lang = 'en') {
-    // Force English to retrieve rich World Cup news articles, avoiding the sparse/garbled Chinese results from GNews.
+    const isZh = lang.startsWith('zh');
+
+    if (isZh) {
+      // For Chinese, load custom Xiaohongshu Sports news locally. No API quota used, and content is tailored.
+      const fallback = await this.getFallbackData();
+      return fallback.news['zh-CN'] || [];
+    }
+
+    // For English, fetch live news from GNews API via serverless proxy
     const targetLang = 'en';
     const cacheKey = `wc_news_${targetLang}`;
     const cached = Utils.cache.get(cacheKey);
@@ -156,7 +164,7 @@ const ApiService = {
     } catch (e) {
       console.warn('News API failed. Falling back to local news.');
       const fallback = await this.getFallbackData();
-      return fallback.news[targetLang] || fallback.news['en'] || [];
+      return fallback.news['en'] || [];
     }
   },
 
