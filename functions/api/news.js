@@ -97,7 +97,7 @@ export async function onRequest(context) {
                 title: tTitle,
                 description: tDesc,
                 source: {
-                  name: `小红书体育 · 编译`,
+                  name: art.source.name,
                   url: art.source.url
                 }
               };
