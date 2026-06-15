@@ -1,21 +1,44 @@
 /* Cloudflare Pages Function — /api/news
    Proxies requests to GNews.io in English and translates dynamically if lang=zh */
 
-async function translateText(text, targetLang = 'zh-CN') {
+async function translateText(text, env, targetLang = 'zh-CN') {
   if (!text) return '';
+
+  // 1. Try Cloudflare Workers AI (Built-in, GPU accelerated, 100% stable inside Cloudflare)
+  if (env && env.AI) {
+    try {
+      const response = await env.AI.run('@cf/meta/m2m100-1.2b', {
+        text: text,
+        source_lang: 'english',
+        target_lang: 'chinese'
+      });
+      if (response && response.translated_text) {
+        return response.translated_text;
+      }
+    } catch (aiError) {
+      console.warn('Cloudflare Workers AI translation failed. Trying Google Translate fallback...', aiError);
+    }
+  }
+
+  // 2. Fallback to Google Translate API
   try {
     const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
-    const resp = await fetch(url);
-    if (!resp.ok) return text;
-    const data = await resp.json();
-    if (data && data[0]) {
-      return data[0].map(x => x[0]).join('');
+    const resp = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      }
+    });
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data && data[0]) {
+        return data[0].map(x => x[0]).join('');
+      }
     }
-    return text;
   } catch (e) {
-    console.warn('Translation failed, returning original text:', e);
-    return text;
+    console.warn('Google Translation fallback failed:', e);
   }
+
+  return text;
 }
 
 export async function onRequest(context) {
@@ -66,8 +89,8 @@ export async function onRequest(context) {
           articles = await Promise.all(
             articles.map(async (art) => {
               const [tTitle, tDesc] = await Promise.all([
-                translateText(art.title, 'zh-CN'),
-                translateText(art.description, 'zh-CN')
+                translateText(art.title, context.env, 'zh-CN'),
+                translateText(art.description, context.env, 'zh-CN')
               ]);
               return {
                 ...art,

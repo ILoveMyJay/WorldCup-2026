@@ -24,7 +24,7 @@ const ApiService = {
     if (cached) return cached;
 
     try {
-      const res = await fetch('data/fallback-data.json?v=8');
+      const res = await fetch('data/fallback-data.json?v=9');
       const data = await res.json();
       Utils.cache.set('fallback_data', data, 3600);
       return data;

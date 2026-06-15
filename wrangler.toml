@@ -6,3 +6,6 @@ compatibility_date = "2026-06-13"
 [[kv_namespaces]]
 binding = "VOTE_KV"
 id = "3db593e2ba69422d8d10aca33e6e7bc2"
+
+[ai]
+binding = "AI"
