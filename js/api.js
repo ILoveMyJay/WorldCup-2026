@@ -139,12 +139,14 @@ const ApiService = {
 
   // 5. News
   async getNews(lang = 'en') {
-    const cacheKey = `wc_news_${lang}`;
+    // Force English to retrieve rich World Cup news articles, avoiding the sparse/garbled Chinese results from GNews.
+    const targetLang = 'en';
+    const cacheKey = `wc_news_${targetLang}`;
     const cached = Utils.cache.get(cacheKey);
     if (cached) return cached;
 
     try {
-      const data = await this.fetchJSON(`/api/news?lang=${lang}`);
+      const data = await this.fetchJSON(`/api/news?lang=${targetLang}`);
 
       if (data && data.articles) {
         Utils.cache.set(cacheKey, data.articles, 600);
@@ -154,7 +156,7 @@ const ApiService = {
     } catch (e) {
       console.warn('News API failed. Falling back to local news.');
       const fallback = await this.getFallbackData();
-      return fallback.news[lang] || fallback.news['en'] || [];
+      return fallback.news[targetLang] || fallback.news['en'] || [];
     }
   },
 
